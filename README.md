@@ -6,15 +6,6 @@ A Vite + React project for eCommerce.
 
 These instructions will help you set up and run the project on your local machine for development and testing purposes.
 
-### Demo Link
-
-[Vercel Link](https://eshops-tau.vercel.app)
-
-Login Credentials
-
-- phone number: 0787654321
-- pass: 0787654321
-
 ### Prerequisites
 
 Make sure you have Node.js version 20+ and Yarn installed on your machine.
