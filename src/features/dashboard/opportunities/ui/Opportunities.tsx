@@ -19,9 +19,9 @@ import { IOrder } from "../../home/types";
 import { useJobServices } from "../../jobs/services";
 import { useBidServices } from "../services";
 import { useOpportunitiesParameters } from "../stores";
-import { IBidResult, IDriver, PaginatedResponse } from "../types";
 import OpportunitiesSection from "./OpportunitiesSection";
 import OpportunitiesTable from "./OpportunitiesTable";
+import { PaginatedResponse } from "../../../services/types";
 export default function Opportunities() {
   const { getOrder, getOrderBid } = useJobServices();
   const {
@@ -41,8 +41,8 @@ export default function Opportunities() {
   const [isLoading, setIsLoading] = useState(false);
   const [loadingOrder, setLoadingOrder] = useState(false);
   const [order, setOrder] = useState<IOrder>();
-  const [bids, setBids] = useState<PaginatedResponse<IBidResult>>();
-  const [dirivers, setDirivers] = useState<PaginatedResponse<IDriver>>();
+  const [bids, setBids] = useState<PaginatedResponse<any>>();
+  const [dirivers, setDirivers] = useState<PaginatedResponse<any>>();
 
   const cancelBidAction = () => {
     setIsLoading(true);

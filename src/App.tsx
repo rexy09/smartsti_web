@@ -30,7 +30,8 @@ const theme = createTheme({
     TextInput: TextInput.extend({
       defaultProps: {
         radius:"md",
-        size:"md"
+        // size:"md"
+        size:"sm"
       },
     }),
     Select: Select.extend({

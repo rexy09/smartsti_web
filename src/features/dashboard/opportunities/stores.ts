@@ -4,11 +4,12 @@ export interface OpportunitiesFilterParameters {
   endDate: string;
   region: string;
   type: string;
+  search: string;
 }
 
 export interface Actions {
   updateText(
-    type: "startDate" | "endDate" | "region" | "type",
+    type: "startDate" | "endDate" | "region" | "type"| "search",
     val: string
   ): void;
   reset: () => void;
@@ -19,6 +20,7 @@ const initialState: OpportunitiesFilterParameters = {
   endDate: "",
   region: "",
   type: "",
+  search: "",
 };
 
 export const useOpportunitiesParameters = create<OpportunitiesFilterParameters & Actions>((set) => ({

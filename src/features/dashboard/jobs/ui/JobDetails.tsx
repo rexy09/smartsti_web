@@ -19,7 +19,6 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Color } from "../../../../common/theme";
 import { getColorForStateMui } from "../../../hooks/utils";
-import { IBidResult } from "../../opportunities/types";
 import { IOrder } from "../../home/types";
 import { useJobServices } from "../services";
 import { IBidForm, PaginatedResponse } from "../types";
@@ -35,7 +34,7 @@ export default function JobDetails() {
   const [isLoading, setIsLoading] = useState(false);
   const [loadingOrder, setLoadingOrder] = useState(false);
   const [order, setOrder] = useState<IOrder>();
-  const [bids, setBids] = useState<PaginatedResponse<IBidResult>>();
+  const [bids, setBids] = useState<PaginatedResponse<any>>();
 
   const form = useForm<IBidForm>({
     initialValues: { price: 0 },
@@ -223,7 +222,6 @@ export default function JobDetails() {
         </Paper>
       }
       <Space h="md" />
-      <OrderDetails loadingOrder={loadingOrder} order={order} />
 
     </div>
   );
