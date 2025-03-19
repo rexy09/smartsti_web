@@ -1,0 +1,19 @@
+import { create } from "zustand";
+import { Actions, JobFilterParameters } from "./types";
+
+// define the initial state
+const initialState: JobFilterParameters = {
+  startDate: "",
+  endDate: "",
+};
+
+export const useDashboardParameters = create<JobFilterParameters & Actions>((set) => ({
+  ...initialState,
+
+  updateText(type, val) {
+    set(() => ({ [type]: val }));
+  },
+  reset: () => {
+    set(initialState);
+  },
+}));
