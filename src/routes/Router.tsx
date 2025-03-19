@@ -23,6 +23,7 @@ import JobDetailsPage from "../pages/dashboard/JobDetailsPage";
 import OpportunitiesPage from "../pages/dashboard/OpportunitiesPage";
 import SettingsPage from "../pages/dashboard/SettingsPage";
 import ReportsPage from "../pages/dashboard/ReportsPage";
+import OpportunityDetailsPage from "../pages/dashboard/OpportunityDetailsPage";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -36,16 +37,10 @@ export const router = createBrowserRouter(
         // errorElement={<ServerError />}
       >
         <Route index path="/" element={<DashboardPage />} />
-        <Route element={<AuthRights allowedRights={["sender"]} />}>
-          <Route index path="/post_cargo" element={<PostCargoPage />} />
-        </Route>
-        <Route element={<AuthRights allowedRights={["owner"]} />}>
-          <Route index path="/company" element={<CompanyPage />} />
-          <Route index path="/jobs" element={<JobPage />} />
-          <Route index path="/jobs/:id" element={<JobDetailsPage />} />
-        </Route>
-        <Route index path="/tracking" element={<TrackingPage />} />
+       
         <Route index path="/opportunities" element={<OpportunitiesPage />} />
+        <Route index path="/opportunities/:id" element={<OpportunityDetailsPage />} />
+        
         <Route index path="/documents" element={<DocumentPage />} />
         <Route index path="/eve" element={<EvePage />} />
         <Route index path="/notifications" element={<NotificationPage />} />

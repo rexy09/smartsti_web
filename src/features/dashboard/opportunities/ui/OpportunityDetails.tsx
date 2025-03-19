@@ -1,4 +1,5 @@
 import {
+  ActionIcon,
   Button,
   Group,
   Menu,
@@ -20,9 +21,12 @@ import { useJobServices } from "../../jobs/services";
 import { useBidServices } from "../services";
 import { useOpportunitiesParameters } from "../stores";
 import OpportunitiesSection from "./OpportunitiesSection";
-import OpportunitiesTable from "./OpportunitiesTable";
+import { BsBookmarkPlus } from "react-icons/bs";
 import { PaginatedResponse } from "../../../services/types";
-export default function Opportunities() {
+import { IoMdArrowRoundBack } from "react-icons/io";
+import OpportunityDetailsCard from "../components/OpportunityDetailsCard";
+import { IoShareSocialOutline } from "react-icons/io5";
+export default function OpportunityDetails() {
   const { getOrder, getOrderBid } = useJobServices();
   const {
     cancelBid,
@@ -205,118 +209,45 @@ export default function Opportunities() {
 
   return (
     <div>
+      <Text size="24px" fw={500}>
+        Opportunity Details
+      </Text>
+      <Space h={"md"} />
       <Group justify="space-between">
-        <Text size="24px" fw={500}>
-          Opportunities
-        </Text>
         <Group>
-          <Select
-            leftSection={Icons.filter2}
-            // rightSection={<RiArrowDropDownLine size={18} />}
-            placeholder="Region"
-            w={'150'}
-            size="sm"
-            searchable
-            data={[
-              { label: "Arusha", value: "Arusha" },
-              { label: "Dar es Salaam", value: "Dar es Salaam" },
-              { label: "Dodoma", value: "Dodoma" },
-              { label: "Geita", value: "Geita" },
-              { label: "Iringa", value: "Iringa" },
-              { label: "Kagera", value: "Kagera" },
-              { label: "Katavi", value: "Katavi" },
-              { label: "Kigoma", value: "Kigoma" },
-              { label: "Kilimanjaro", value: "Kilimanjaro" },
-              { label: "Lindi", value: "Lindi" },
-              { label: "Manyara", value: "Manyara" },
-              { label: "Mara", value: "Mara" },
-              { label: "Mbeya", value: "Mbeya" },
-              { label: "Morogoro", value: "Morogoro" },
-              { label: "Mtwara", value: "Mtwara" },
-              { label: "Mwanza", value: "Mwanza" },
-              { label: "Njombe", value: "Njombe" },
-              { label: "Pwani", value: "Pwani" },
-              { label: "Rukwa", value: "Rukwa" },
-              { label: "Ruvuma", value: "Ruvuma" },
-              { label: "Shinyanga", value: "Shinyanga" },
-              { label: "Simiyu", value: "Simiyu" },
-              { label: "Singida", value: "Singida" },
-              { label: "Tabora", value: "Tabora" },
-              { label: "Tanga", value: "Tanga" },
-              { label: "Songwe", value: "Songwe" },
-              { label: "Pemba North", value: "Pemba North" },
-              { label: "Pemba South", value: "Pemba South" },
-              { label: "Unguja Central", value: "Unguja Central" },
-              { label: "Unguja North", value: "Unguja North" },
-              { label: "Unguja South", value: "Unguja South" }
-            ]}
-            value={parameters.region}
-            onChange={(value) => {
-              parameters.updateText("region", value??"");
-              fetchData();
-            }
-            }
-            clearable
-          />
-          
-          <Menu width={220} withinPortal>
-            <Menu.Target>
-              <Button
-                color="#13131329"
-                variant="default"
-                radius={"md"}
-                leftSection={Icons.filter2}
-                rightSection={<RiArrowDropDownLine size={18} />}
-                pr={12}
-              >
-                <Text
-                  size="14px"
-                  fw={parameters.type == "" ? 500 : 700}
-                  c={parameters.type == "" ? "" : Color.PrimaryBlue}
-                  tt={"capitalize"}
-                >
-                  {parameters.type == ""
-                    ? "Type"
-                    : parameters.type.split("_").join(" ")}
-                </Text>
-              </Button>
-            </Menu.Target>
-            <Menu.Dropdown>
-              {[
-                { label: "Type", value: "" },
-                { label: "Ongoing", value: "Ongoing" },
-                { label: "Closed", value: "Closed" },
-              ].map((item) => (
-                  <Menu.Item
-                    key={item.value}
-                    style={{
-                      color:
-                        parameters.type === item.value
-                          ? `${Color.PrimaryBlue}`
-                          : "",
-                      fontWeight: parameters.type === item.value ? "700" : "",
-                    }}
-                    onClick={() => {
-                      parameters.updateText("type", item.value);
-                      fetchData();
-                    }}
-                  >
-                    {item.label}
-                  </Menu.Item>
-                ))}
-            </Menu.Dropdown>
-          </Menu>
+          <ActionIcon variant="subtle" color="gray" onClick={() => {
+            navigate(-1);
+          }} >
+            <IoMdArrowRoundBack />
+          </ActionIcon>
+          <Text size="18px" fw={500}>
+            Courses
+          </Text>
+        </Group>
+        <Group>
+          <Button variant="filled" radius="md" color={"#0459FE"}>Apply Now</Button>
+          <Button
+            color="#13131329"
+            variant="default"
+            radius={"md"}
+            leftSection={<IoShareSocialOutline />}
+          >
+            Share
+          </Button>
+          <Button
+            color="#13131329"
+            variant="default"
+            radius={"md"}
+            leftSection={<BsBookmarkPlus />}
+          >
+            Save
+          </Button>
+
         </Group>
 
       </Group>
       <Space h={"md"} />
-      <OpportunitiesSection/>
-      <Space h={"md"} />
-      <OpportunitiesTable />
-      
-   
-
-
+      <OpportunityDetailsCard />
     </div>
   );
 }

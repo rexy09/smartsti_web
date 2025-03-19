@@ -1,8 +1,9 @@
 import { Divider, Paper, Text } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
 import OpportunitiesCard from "../components/OpportunitiesCard";
+import { OpportunityCardSkeleton } from "../components/Loaders";
 
-interface Props {}
+interface Props { }
 export default function OpportunitiesSection(props: Props) {
   return (
     <Paper radius="10px" style={{ border: "1px solid #EFF2F1" }} bg={"#E3EBF630"}>
@@ -12,10 +13,9 @@ export default function OpportunitiesSection(props: Props) {
       <Divider />
       <div style={{ padding: "20px" }}>
         <Carousel
-          slideSize="33.33%"
+          slideSize="25%"
           align="start"
           slideGap="md"
-          dragFree
           withControls={false}
         >
           <Carousel.Slide>
@@ -26,6 +26,12 @@ export default function OpportunitiesSection(props: Props) {
           </Carousel.Slide>
           <Carousel.Slide>
             <OpportunitiesCard />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <OpportunitiesCard />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <OpportunityCardSkeleton />
           </Carousel.Slide>
         </Carousel>
       </div>

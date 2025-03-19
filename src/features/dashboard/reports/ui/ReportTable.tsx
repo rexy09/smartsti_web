@@ -12,7 +12,7 @@ import { FaCheck } from "react-icons/fa";
 import { IoMdEye } from "react-icons/io";
 import { IoCopyOutline } from "react-icons/io5";
 import { CustomTable } from "../../../../common/components/Table/CustomTable";
-import { getColorForStateMui } from "../../../hooks/utils";
+import { getColorForState } from "../../../hooks/utils";
 import { IOrder, parseLocationFromJson } from "../../home/types";
 import { PaginatedResponse } from "../types";
 import moment from "moment";
@@ -64,7 +64,7 @@ export default function ReportTable({ orders, loadingOrders, fetchOrders }: Prop
       <Table.Td w={100}>
         <Badge
           variant="light"
-          color={getColorForStateMui(row.state)}
+          color={getColorForState(row.state)}
           size="sm"
           radius="sm"
         >

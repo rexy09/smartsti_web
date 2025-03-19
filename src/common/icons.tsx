@@ -34,6 +34,8 @@ import research from "../assets/icons/research.svg";
 import funding from "../assets/icons/funding.svg";
 import calendar from "../assets/icons/calendar.svg";
 import filter_lines from "../assets/icons/filter_lines.svg";
+import save from "../assets/icons/save.svg";
+import star from "../assets/icons/star.svg";
 
 
 interface CustomIconProps {
@@ -104,4 +106,6 @@ export const Icons = {
   filter2: createCustomIcon({ src: filter2 }),
   calendar: createCustomIcon({ src: calendar }),
   filter_lines: createCustomIcon({ src: filter_lines }),
+  star: createCustomIcon({ src: star }),
+  save: createCustomIcon({ src: save }),
 };

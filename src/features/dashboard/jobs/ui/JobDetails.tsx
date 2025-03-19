@@ -18,7 +18,7 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Color } from "../../../../common/theme";
-import { getColorForStateMui } from "../../../hooks/utils";
+import { getColorForState } from "../../../hooks/utils";
 import { IOrder } from "../../home/types";
 import { useJobServices } from "../services";
 import { IBidForm, PaginatedResponse } from "../types";
@@ -199,7 +199,7 @@ export default function JobDetails() {
                 </Text>
                 <Badge
                   variant="light"
-                  color={getColorForStateMui(bids?.results[0].state ?? "")}
+                  color={getColorForState(bids?.results[0].state ?? "")}
                   size="sm"
                   radius="sm"
                 >

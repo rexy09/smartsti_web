@@ -14,7 +14,7 @@ import { IoMdEye } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { CustomTable } from "../../../../common/components/Table/CustomTable";
 import { IUserResponse } from "../../../auth/types";
-import { getColorForStateMui } from "../../../hooks/utils";
+import { getColorForState } from "../../../hooks/utils";
 import { PaginatedResponse } from "../../../services/types";
 import { IOpportunity, opportunities } from "../types";
 import { Icons } from "../../../../common/icons";
@@ -58,7 +58,7 @@ export default function OpportunitiesTable({
         <Group>
           <Text
             fw={400} size="14px"
-            c={getColorForStateMui(row.status)}
+            c={getColorForState(row.status)}
           >
             {row.status}
           </Text>
@@ -76,7 +76,7 @@ export default function OpportunitiesTable({
           color="#555252"
           radius="md"
           onClick={() => {
-            // navigate("/bids/" + row.order.id);
+            navigate("/opportunities/" + row.name);
           }}
         >
           <BsThreeDots />

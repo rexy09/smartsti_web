@@ -163,7 +163,7 @@ export function formatOrderStateText(state: string): string {
     .join(" ");
 }
 
-export function getColorForStateMui(status: string): string {
+export function getColorForState(status: string): string {
   switch (status.toLowerCase()) {
     case "pending":
     case "bidding":
