@@ -1,6 +1,6 @@
 # eshops
 
-A Vite + React project for eCommerce.
+A Vite + React project for SmartSTI.
 
 ## Getting Started
 
