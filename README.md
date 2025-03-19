@@ -1,4 +1,4 @@
-# eshops
+# SmartSTI
 
 A Vite + React project for SmartSTI.
 
