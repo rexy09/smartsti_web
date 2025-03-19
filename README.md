@@ -44,10 +44,6 @@ yarn dev
 
 Visit http://localhost:5173 in your browser to see the app.
 
-### Login Credentials
-
-- phone number: 0787654321
-- pass: 0787654321
 
 ## Building for Production
 
@@ -73,7 +69,7 @@ This project structure organizes a React application into different directories 
 .
 ├── App.tsx
 ├── assets
-│   ├── eshop_logo.png
+│   ├── logo.png
 ├── common
 │   ├── components
 │   ├── layouts
@@ -109,7 +105,7 @@ This project structure organizes a React application into different directories 
 │   │   ├── inventory.tsx
 │   ├── error.tsx
 │   ├── not_found.tsx
-│   └── eshop
+│   └── public
 │       ├── home.tsx
 ├── routes
 │   ├── auth_role.tsx
