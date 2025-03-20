@@ -8,7 +8,6 @@ import {
   Text,
   UnstyledButton,
 } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
 import { notifications } from "@mantine/notifications";
 import { useEffect, useState } from "react";
 import useAuthUser from "react-auth-kit/hooks/useAuthUser";
@@ -19,17 +18,14 @@ import { Color } from "../../../../common/theme";
 import { IUserResponse } from "../../../auth/types";
 import { PaginatedResponse } from "../../../services/types";
 import { IOrder } from "../../home/types";
-import { useJobServices } from "../../jobs/services";
 import ResearchStatisticCard from "../components/ResearchStatisticCard";
 import { useBidServices } from "../services";
 import { useOpportunitiesParameters } from "../stores";
-import ResearchOutputsTable from "./ResearchOutputsTable";
-import PublicationInsightsTable from "./PublicationInsightsTable";
-import { title } from "process";
 import PatentTable from "./PatentTable";
+import PublicationInsightsTable from "./PublicationInsightsTable";
+import ResearchOutputsTable from "./ResearchOutputsTable";
 import ResearchProjectTable from "./ResearchProjectTable";
 export default function Research() {
-  const { getOrder, getOrderBid } = useJobServices();
   const { cancelBid, acceptBid, declineBid, getAvailableDrivers } =
     useBidServices();
   const { id } = useParams();
@@ -147,58 +143,11 @@ export default function Research() {
   const fetchData = () => {
     setLoadingOrder(true);
 
-    getOrder(id!)
-      .then((response) => {
-        setLoadingOrder(false);
-        setOrder(response.data);
-      })
-      .catch((_error) => {
-        setLoadingOrder(false);
-        // notifications.show({
-        //   color: "red",
-        //   title: "Error",
-        //   message: "Something went wrong!",
-        // });
-      });
-
-    getOrderBid(id!)
-      .then((response) => {
-        setLoadingOrder(false);
-        setBids(response.data);
-      })
-      .catch((_error) => {
-        setLoadingOrder(false);
-        // notifications.show({
-        //   color: "red",
-        //   title: "Error",
-        //   message: "Something went wrong!",
-        // });
-      });
-
-    if (authUser?.user_type == "owner") {
-      fetchAvailableDrivers(1);
-    }
+    
   };
 
-  const fetchAvailableDrivers = (page: number) => {
-    setLoadingOrder(true);
-
-    getAvailableDrivers(page)
-      .then((response) => {
-        setLoadingOrder(false);
-        setDirivers(response.data);
-      })
-      .catch((_error) => {
-        setLoadingOrder(false);
-        notifications.show({
-          color: "red",
-          title: "Error",
-          message: "Something went wrong!",
-        });
-      });
-  };
+  
   useEffect(() => {
-    fetchData();
   }, []);
   const [searchParams, setSearchParams] = useSearchParams();
   const [activeTab, setActiveTab] = useState<{ tabId: string, title: string }>({ tabId: "0", title:"Research Outputs"});
@@ -312,7 +261,7 @@ export default function Research() {
               iconkey="published"
               statusColor="#4D5BD4"
               count={1250}
-              setActiveTab={() => {
+              onClick={() => {
                 setActiveTab(tabs[1]);
               }}
             />
@@ -321,7 +270,7 @@ export default function Research() {
               count={250}
               iconkey="patent"
               statusColor="#7CC1C5"
-              setActiveTab={() => {
+              onClick={() => {
                 setActiveTab(tabs[2]);
               }}
             />
@@ -330,7 +279,7 @@ export default function Research() {
               iconkey="project"
               statusColor="#6361CD"
               count={85}
-              setActiveTab={() => {
+              onClick={() => {
                 setActiveTab(tabs[3]);
 
               }}
@@ -340,7 +289,7 @@ export default function Research() {
               iconkey="paper"
               statusColor="#6E9FF3"
               count={850}
-              setActiveTab={() => {
+              onClick={() => {
                 setActiveTab(tabs[4]);
 
               }}
@@ -350,9 +299,8 @@ export default function Research() {
               subtitle="University of Tanzania"
               iconkey="university"
               statusColor="#6E9FF3"
-              setActiveTab={() => {
-                setActiveTab(tabs[5]);
-
+              onClick={() => {
+                navigate("/research/instiutions")
               }}
             />
           </>

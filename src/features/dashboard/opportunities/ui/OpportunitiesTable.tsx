@@ -8,19 +8,17 @@ import {
   Text,
   TextInput
 } from "@mantine/core";
-import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 import { BsThreeDots } from "react-icons/bs";
 import { IoMdEye } from "react-icons/io";
+import { MdOutlineClear } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { CustomTable } from "../../../../common/components/Table/CustomTable";
-import { IUserResponse } from "../../../auth/types";
+import { Icons } from "../../../../common/icons";
+import { Color } from "../../../../common/theme";
 import { getColorForState } from "../../../hooks/utils";
 import { PaginatedResponse } from "../../../services/types";
-import { IOpportunity, opportunities } from "../types";
-import { Icons } from "../../../../common/icons";
 import { useOpportunitiesParameters } from "../stores";
-import { Color } from "../../../../common/theme";
-import { MdOutlineClear } from "react-icons/md";
+import { IOpportunity, opportunities } from "../types";
 interface Props {
   opportunities?: PaginatedResponse<IOpportunity>;
   loadingOrders?: boolean;
@@ -33,7 +31,6 @@ export default function OpportunitiesTable({
   const parameters = useOpportunitiesParameters();
 
   const navigate = useNavigate();
-  const authUser = useAuthUser<IUserResponse>();
 
   const rows = opportunities?.map((row, index) => (
     <Table.Tr key={index}>

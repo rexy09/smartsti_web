@@ -75,21 +75,21 @@ function App() {
     cookieSecure: window.location.protocol === "https:",
     // refresh: refresh
   });
-  const libraries: Libraries = ["places", "maps"];
+  // const libraries: Libraries = ["places", "maps"];
 
   return (
     <>
-      <LoadScript
+      {/* <LoadScript
         googleMapsApiKey={Env.googleMapsApiKey}
         libraries={libraries}
-      >
+      > */}
         <MantineProvider theme={theme}>
           <Notifications />
           <AuthProvider store={store}>
             <RouterProvider router={router} />
           </AuthProvider>
         </MantineProvider>
-      </LoadScript>
+      {/* </LoadScript> */}
     </>
   );
 }

@@ -44,7 +44,7 @@ export default function ResearchProjectTable({ fetchOrders }: Props) {
 
         <p className={`px-3 py-1 inline-flex text-[12px] leading-5 font-[400] rounded-full text-center
                       ${row.status === 'Active' ? 'bg-green-100 text-[#469D4E]' :
-          row.status === 'In Progress' ? 'bg-yellow-100 text-yellow-800' :
+            row.status === 'In Progress' ? 'bg-yellow-100 text-yellow-800' :
               'bg-blue-100 text-blue-800'}`}>
           {row.status}
         </p>
@@ -53,16 +53,18 @@ export default function ResearchProjectTable({ fetchOrders }: Props) {
 
       <Table.Td>
         <Button
-                 variant="light"
-                 color="#2A2A3C"
-                 radius="md"
-                 size="sm"
+          variant="light"
+          color="#2A2A3C"
+          radius="md"
+          size="sm"
           leftSection={<TiZoomOutline />}
-                 onClick={() => {
-                 }}
-               >
+          onClick={() => {
+            navigate("/research/project/" + row.title);
+
+          }}
+        >
           View Full
-               </Button>
+        </Button>
       </Table.Td>
     </Table.Tr>
   ));

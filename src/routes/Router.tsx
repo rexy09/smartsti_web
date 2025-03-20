@@ -1,3 +1,4 @@
+import RequireAuth from "@auth-kit/react-router/RequireAuth";
 import {
   Route,
   createBrowserRouter,
@@ -5,26 +6,21 @@ import {
 } from "react-router-dom";
 import AuthLayout from "../common/layouts/AuthLayout";
 import DashboardLayout from "../common/layouts/DashboardLayout";
+import AuthCallbackPage from "../pages/auth/AuthCallbackPage";
 import LoginPage from "../pages/auth/LoginPage";
 import SignUpPage from "../pages/auth/SignUpPage";
 import DashboardPage from "../pages/dashboard/DashboardPage";
-import { NotFound } from "../pages/NotFound";
-import AuthCallbackPage from "../pages/auth/AuthCallbackPage";
-import RequireAuth from "@auth-kit/react-router/RequireAuth";
-import PostCargoPage from "../pages/dashboard/PostCargoPage";
-import TrackingPage from "../pages/dashboard/TrackingPage";
-import DocumentPage from "../pages/dashboard/DocumentPage";
 import EvePage from "../pages/dashboard/EvePage";
-import JobPage from "../pages/dashboard/JobPage";
-import AuthRights from "./auth_role";
-import CompanyPage from "../pages/dashboard/CompanyPage";
 import NotificationPage from "../pages/dashboard/NotificationPage";
-import JobDetailsPage from "../pages/dashboard/JobDetailsPage";
 import OpportunitiesPage from "../pages/dashboard/OpportunitiesPage";
-import SettingsPage from "../pages/dashboard/SettingsPage";
-import ReportsPage from "../pages/dashboard/ReportsPage";
 import OpportunityDetailsPage from "../pages/dashboard/OpportunityDetailsPage";
+import ReportsPage from "../pages/dashboard/ReportsPage";
 import ResearchPage from "../pages/dashboard/ResearchPage";
+import SettingsPage from "../pages/dashboard/SettingsPage";
+import { NotFound } from "../pages/NotFound";
+import ResearchDetailsPage from "../pages/dashboard/ResearchDetailsPage";
+import ResearchProjectDetailsPage from "../pages/dashboard/ResearchProjectDetailsPage";
+import MostActiveInstiutionsPage from "../pages/dashboard/MostActiveInstiutionsPage";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -42,6 +38,9 @@ export const router = createBrowserRouter(
         <Route index path="/opportunities" element={<OpportunitiesPage />} />
         <Route index path="/opportunities/:id" element={<OpportunityDetailsPage />} />
         <Route index path="/research" element={<ResearchPage />} />
+        <Route index path="/research/:id" element={<ResearchDetailsPage />} />
+        <Route index path="/research/project/:id" element={<ResearchProjectDetailsPage />} />
+        <Route index path="/research/instiutions" element={<MostActiveInstiutionsPage />} />
         
         <Route index path="/eve" element={<EvePage />} />
         <Route index path="/notifications" element={<NotificationPage />} />

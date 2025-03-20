@@ -15,7 +15,7 @@ interface Props {
   statusColor: string;
   iconkey: keyof typeof Icons;
   count?: number;
-  setActiveTab: () => void
+  onClick: () => void
 }
 export default function ResearchStatisticCard(props: Props) {
 
@@ -87,7 +87,7 @@ export default function ResearchStatisticCard(props: Props) {
               rightSection={Icons.arrow_up_right}
               onClick={
                 () => {
-                  props.setActiveTab();
+                  props.onClick();
 
                 }
               }

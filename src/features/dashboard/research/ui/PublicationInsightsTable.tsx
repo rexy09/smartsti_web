@@ -19,6 +19,7 @@ import {
   publicationInsightData,
   researchData,
 } from "../types";
+import { IoMdEye } from "react-icons/io";
 interface Props {
   opportunities?: PaginatedResponse<IResearchOutput>;
   loadingOrders?: boolean;
@@ -51,10 +52,11 @@ export default function PublicationInsightsTable({ fetchOrders }: Props) {
           color="#555252"
           radius="md"
           onClick={() => {
-            navigate("/opportunities/" + row.title);
+            navigate("/research/" + row.id);
           }}
         >
-          <BsThreeDots />
+           <IoMdEye /> 
+          {/* <BsThreeDots /> */}
         </ActionIcon>
       </Table.Td>
     </Table.Tr>

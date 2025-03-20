@@ -1,245 +1,214 @@
 import {
   ActionIcon,
   Button,
+  Divider,
   Group,
+  Paper,
+  SimpleGrid,
   Space,
-  Text
+  Text,
+  UnstyledButton,
 } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { notifications } from "@mantine/notifications";
 import { useEffect, useState } from "react";
-import useAuthUser from "react-auth-kit/hooks/useAuthUser";
-import { BsBookmarkPlus } from "react-icons/bs";
-import { IoMdArrowRoundBack } from "react-icons/io";
-import { IoShareSocialOutline } from "react-icons/io5";
+import { FaCircleCheck } from "react-icons/fa6";
+import { IoIosSearch, IoMdArrowRoundBack } from "react-icons/io";
 import { useNavigate, useParams } from "react-router-dom";
-import { IUserResponse } from "../../../auth/types";
-import { PaginatedResponse } from "../../../services/types";
-import { IOrder } from "../../home/types";
-import { useJobServices } from "../../jobs/services";
 import { useBidServices } from "../services";
-import { useOpportunitiesParameters } from "../stores";
 export default function ResearchDetails() {
-  const { getOrder, getOrderBid } = useJobServices();
-  const {
-    cancelBid,
-    acceptBid,
-    declineBid,
-    getAvailableDrivers,
-  } = useBidServices();
+  const { } = useBidServices();
   const { id } = useParams();
-  const authUser = useAuthUser<IUserResponse>();
   const navigate = useNavigate();
-  const parameters = useOpportunitiesParameters();
-
-
-  const [opened, { open, close }] = useDisclosure(false);
 
   const [isLoading, setIsLoading] = useState(false);
-  const [loadingOrder, setLoadingOrder] = useState(false);
-  const [order, setOrder] = useState<IOrder>();
-  const [bids, setBids] = useState<PaginatedResponse<any>>();
-  const [dirivers, setDirivers] = useState<PaginatedResponse<any>>();
 
-  const cancelBidAction = () => {
-    setIsLoading(true);
-    cancelBid(bids?.results[0].id!)
-      .then((_response) => {
-        setIsLoading(false);
-        close();
-        fetchData();
-        notifications.show({
-          color: "green",
-          title: "Successfuly",
-          message: "Your bid has been cancelled",
-        });
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        // if (
-        //   error.response.data.error &&
-        //   typeof error?.response?.data?.error === "string"
-        // ) {
-        //   notifications.show({
-        //     color: "red",
-        //     title: "Error",
-        //     message: error.response.data.error,
-        //   });
-        // } else {
-        //   notifications.show({
-        //     color: "red",
-        //     title: "Error",
-        //     message: "Something went wrong!",
-        //   });
-        // }
-      });
-  };
-
-
-
-  const acceptBidAction = () => {
-    setIsLoading(true);
-    acceptBid(bids?.results[0].id!)
-      .then((_response) => {
-        setIsLoading(false);
-        fetchData();
-        notifications.show({
-          color: "green",
-          title: "Successfuly",
-          message: "Bid has been accepted",
-        });
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        // if (
-        //   error.response.data.error &&
-        //   typeof error?.response?.data?.error === "string"
-        // ) {
-        //   notifications.show({
-        //     color: "red",
-        //     title: "Error",
-        //     message: error.response.data.error,
-        //   });
-        // } else {
-        //   notifications.show({
-        //     color: "red",
-        //     title: "Error",
-        //     message: "Something went wrong!",
-        //   });
-        // }
-      });
-  };
-
-  const declineBidAction = () => {
-    setIsLoading(true);
-    declineBid(bids?.results[0].id!)
-      .then((_response) => {
-        setIsLoading(false);
-        fetchData();
-        notifications.show({
-          color: "green",
-          title: "Successfuly",
-          message: "Bid has been declined",
-        });
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        // if (
-        //   error.response.data.error &&
-        //   typeof error?.response?.data?.error === "string"
-        // ) {
-        //   notifications.show({
-        //     color: "red",
-        //     title: "Error",
-        //     message: error.response.data.error,
-        //   });
-        // } else {
-        //   notifications.show({
-        //     color: "red",
-        //     title: "Error",
-        //     message: "Something went wrong!",
-        //   });
-        // }
-      });
-  };
-
-  const fetchData = () => {
-    setLoadingOrder(true);
-
-    getOrder(id!)
-      .then((response) => {
-        setLoadingOrder(false);
-        setOrder(response.data);
-      })
-      .catch((_error) => {
-        setLoadingOrder(false);
-        // notifications.show({
-        //   color: "red",
-        //   title: "Error",
-        //   message: "Something went wrong!",
-        // });
-      });
-
-    getOrderBid(id!)
-      .then((response) => {
-        setLoadingOrder(false);
-        setBids(response.data);
-      })
-      .catch((_error) => {
-        setLoadingOrder(false);
-        // notifications.show({
-        //   color: "red",
-        //   title: "Error",
-        //   message: "Something went wrong!",
-        // });
-      });
-
-    if (authUser?.user_type == "owner") {
-      fetchAvailableDrivers(1);
-    }
-  };
-
-  const fetchAvailableDrivers = (page: number) => {
-    setLoadingOrder(true);
-
-    getAvailableDrivers(page)
-      .then((response) => {
-        setLoadingOrder(false);
-        setDirivers(response.data);
-      })
-      .catch((_error) => {
-        setLoadingOrder(false);
-        notifications.show({
-          color: "red",
-          title: "Error",
-          message: "Something went wrong!",
-        });
-      });
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
+  useEffect(() => { }, []);
 
   return (
     <div>
-      <Text size="24px" fw={500}>
-        Opportunity Details
-      </Text>
       <Space h={"md"} />
       <Group justify="space-between">
-        <Group>
-          <ActionIcon variant="subtle" color="gray" onClick={() => {
-            navigate(-1);
-          }} >
-            <IoMdArrowRoundBack />
-          </ActionIcon>
-          <Text size="18px" fw={500}>
-            Courses
-          </Text>
-        </Group>
-        <Group>
-          <Button variant="filled" radius="md" color={"#0459FE"}>Apply Now</Button>
-          <Button
-            color="#13131329"
-            variant="default"
-            radius={"md"}
-            leftSection={<IoShareSocialOutline />}
+        <div>
+          <Group>
+            <ActionIcon
+              variant="subtle"
+              color="gray"
+              onClick={() => {
+                navigate(-1);
+              }}
+            >
+              <IoMdArrowRoundBack size={20} />
+            </ActionIcon>
+            <Text size="18px" fw={500}>
+              Research Details
+            </Text>
+          </Group>
+          <UnstyledButton
+            onClick={() => {
+              navigate(-1);
+            }}
           >
-            Share
-          </Button>
-          <Button
-            color="#13131329"
-            variant="default"
-            radius={"md"}
-            leftSection={<BsBookmarkPlus />}
-          >
-            Save
-          </Button>
-
-        </Group>
+            <Text size="12px" fw={500} c="#27A8DE" fs={"italic"}>
+              Research Outputs
+            </Text>
+          </UnstyledButton>
+        </div>
 
       </Group>
       <Space h={"md"} />
+      <Paper
+        p={"xl"}
+        radius="10px"
+        style={{ border: "1px solid #E5E5E5" }}
+        bg={"#FFFFFF"}
+        maw={"900"}
+      >
+        <Text size="21px" c="#21232C" fw={600}>
+          Title: Impact of Climate Change on Agriculture
+        </Text>
+        <Space h={"xl"} />
+        <Text size="14px" c="#47464A" fw={400}>
+          2023-05-12
+        </Text>
+        <Space h={"xl"} />
+        <Paper
+          p={"xl"}
+          radius="10px"
+          style={{ border: "1px solid #E5E5E5" }}
+          bg={"#FAFAFA"}
+        >
+          <SimpleGrid cols={1}>
+            <Group justify="space-between">
+              <Text
+                size="14px"
+                fw={400}
+                mb={"xs"}
+              >
+                Type
+              </Text>
+              <Text size="14px" fw={600}>
+                Journal Article
+              </Text>
+            </Group>
+            <Group justify="space-between">
+              <Text
+                size="14px"
+                fw={400}
+                mb={"xs"}
+              >
+                Focus Area
+              </Text>
+              <Text size="14px" fw={600}>
+                Climate Change
+              </Text>
+            </Group>
+            <Group justify="space-between">
+              <Text
+                size="14px"
+                fw={400}
+                mb={"xs"}
+              >
+                Contribution
+              </Text>
+              <Text size="14px" fw={600}>
+                Environmental Sustainability
+              </Text>
+            </Group>
+            <Group justify="space-between">
+              <Text
+                size="14px"
+                fw={400}
+                mb={"xs"}
+              >
+                Authors
+              </Text>
+              <Text size="14px" fw={600}>
+                Dr. John Doe, A. Smith
+              </Text>
+            </Group>
+
+            <Group justify="space-between">
+              <Text
+                size="14px"
+                fw={400}
+                mb={"xs"}
+              >
+                Institution
+              </Text>
+              <Text size="14px" fw={600}>
+                University of Dar es Salaam
+              </Text>
+            </Group>
+
+            <Group justify="space-between">
+              <Text
+                size="14px"
+                fw={400}
+                mb={"xs"}
+              >
+                Public Access:
+              </Text>
+              <Text size="14px" fw={600}>
+                Yes
+              </Text>
+            </Group>
+
+          </SimpleGrid>
+        </Paper>
+        <Space h={"md"} />
+
+        <Text size="14px" fw={600}>
+          Abstract
+        </Text>
+        <Space h={"xl"} />
+
+        <Text size="10px" fw={400} c="#717579">
+          This study examines the effects of climate change on agricultural productivity in Tanzania, focusing on adaptive strategies for sustainable food production.
+        </Text>
+
+        <Divider my={'xl'} />
+        <Button
+          variant="default"
+          color="#1F293A"
+          radius="md"
+          size="sm"
+          onClick={() => {
+          }}
+        >
+          View Full Publication
+        </Button>
+        <Space h={"xl"} />
+
+        <Text size="14px" fw={600}>
+          Related Research
+        </Text>
+        <Space h={"md"} />
+
+        <SimpleGrid cols={1}>
+          <Group >
+            <FaCircleCheck color="#1463FF"/>
+            <Text size="10px" fw={400}>
+              Smart Diagnostics with AI (2022) 
+            </Text>
+            <Button variant="light" color="#717680" leftSection={<IoIosSearch size={15}/>} size="compact-xs">View more</Button>
+          </Group>
+          <Group >
+            <FaCircleCheck color="#1463FF"/>
+            <Text size="10px" fw={400}>
+              Predictive Analytics in Healthcare (2021)
+            </Text>
+            <Button variant="light" color="#717680" leftSection={<IoIosSearch size={15}/>} size="compact-xs">View more</Button>
+          </Group>
+          <Group >
+            <FaCircleCheck color="#1463FF"/>
+            <Text size="10px" fw={400}>
+              Personalized Medicine using Machine Learning (2023) 
+            </Text>
+            <Button variant="light" color="#717680" leftSection={<IoIosSearch size={15}/>} size="compact-xs">View more</Button>
+          </Group>
+         
+
+        </SimpleGrid>
+      </Paper>
     </div>
   );
 }
