@@ -36,6 +36,13 @@ import calendar from "../assets/icons/calendar.svg";
 import filter_lines from "../assets/icons/filter_lines.svg";
 import save from "../assets/icons/save.svg";
 import star from "../assets/icons/star.svg";
+import date from "../assets/icons/date.svg";
+import arrow_up_right from "../assets/icons/arrow_up_right.svg";
+import published from "../assets/icons/published.svg";
+import patent from "../assets/icons/patent.svg";
+import project from "../assets/icons/project.svg";
+import paper from "../assets/icons/paper.svg";
+import university from "../assets/icons/university.svg";
 
 
 interface CustomIconProps {
@@ -108,4 +115,11 @@ export const Icons = {
   filter_lines: createCustomIcon({ src: filter_lines }),
   star: createCustomIcon({ src: star }),
   save: createCustomIcon({ src: save }),
+  date: createCustomIcon({ src: date }),
+  arrow_up_right: createCustomIcon({ src: arrow_up_right }),
+  published: createCustomIcon({ src: published }),
+  project: createCustomIcon({ src: project }),
+  paper: createCustomIcon({ src: paper }),
+  university: createCustomIcon({ src: university }),
+  patent: createCustomIcon({ src: patent }),
 };

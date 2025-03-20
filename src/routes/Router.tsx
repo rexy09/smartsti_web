@@ -24,6 +24,7 @@ import OpportunitiesPage from "../pages/dashboard/OpportunitiesPage";
 import SettingsPage from "../pages/dashboard/SettingsPage";
 import ReportsPage from "../pages/dashboard/ReportsPage";
 import OpportunityDetailsPage from "../pages/dashboard/OpportunityDetailsPage";
+import ResearchPage from "../pages/dashboard/ResearchPage";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -40,8 +41,8 @@ export const router = createBrowserRouter(
        
         <Route index path="/opportunities" element={<OpportunitiesPage />} />
         <Route index path="/opportunities/:id" element={<OpportunityDetailsPage />} />
+        <Route index path="/research" element={<ResearchPage />} />
         
-        <Route index path="/documents" element={<DocumentPage />} />
         <Route index path="/eve" element={<EvePage />} />
         <Route index path="/notifications" element={<NotificationPage />} />
         <Route index path="/settings" element={<SettingsPage />} />
