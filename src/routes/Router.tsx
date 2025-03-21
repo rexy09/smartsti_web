@@ -21,6 +21,9 @@ import { NotFound } from "../pages/NotFound";
 import ResearchDetailsPage from "../pages/dashboard/ResearchDetailsPage";
 import ResearchProjectDetailsPage from "../pages/dashboard/ResearchProjectDetailsPage";
 import MostActiveInstiutionsPage from "../pages/dashboard/MostActiveInstiutionsPage";
+import KnowledgeHubPage from "../pages/dashboard/KnowledgeHubPage";
+import AgreementsPage from "../pages/dashboard/AgreementsPage";
+import AgreementDetailsPage from "../pages/dashboard/AgreementDetailsPage";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -41,6 +44,9 @@ export const router = createBrowserRouter(
         <Route index path="/research/:id" element={<ResearchDetailsPage />} />
         <Route index path="/research/project/:id" element={<ResearchProjectDetailsPage />} />
         <Route index path="/research/instiutions" element={<MostActiveInstiutionsPage />} />
+        <Route index path="/knowledge_hub" element={<KnowledgeHubPage />} />
+        <Route index path="/agreements" element={<AgreementsPage />} />
+        <Route index path="/agreements/:id" element={<AgreementDetailsPage />} />
         
         <Route index path="/eve" element={<EvePage />} />
         <Route index path="/notifications" element={<NotificationPage />} />

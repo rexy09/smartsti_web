@@ -8,17 +8,16 @@ import {
   SimpleGrid,
   Space,
   Text,
-  TextInput,
-  UnstyledButton,
+  UnstyledButton
 } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { FaCircleCheck } from "react-icons/fa6";
-import { IoIosSearch, IoMdArrowRoundBack } from "react-icons/io";
+import { FiDownload } from "react-icons/fi";
+import { IoMdArrowRoundBack, IoMdEye } from "react-icons/io";
+import { IoShareSocialOutline } from "react-icons/io5";
 import { useNavigate, useParams } from "react-router-dom";
 import { useBidServices } from "../services";
-import { IoShareSocialOutline } from "react-icons/io5";
-import { FiDownload } from "react-icons/fi";
-import { MdOutlineEmail } from "react-icons/md";
+import { MdOutlineTravelExplore } from "react-icons/md";
 export default function MostActiveInstiutions() {
   const { } = useBidServices();
   const { id } = useParams();
@@ -30,7 +29,6 @@ export default function MostActiveInstiutions() {
 
   return (
     <div>
-      <Space h={"md"} />
       <Group justify="space-between">
         <div>
           <Group>
@@ -80,7 +78,7 @@ export default function MostActiveInstiutions() {
                 </Text>
                 <Space h={"xs"} />
 
-                <Text size="14px" c="#717579" fw={500}>
+                <Text size="16px" c="#1F2D3D" fw={700}>
                   300
                 </Text>
               </div>
@@ -90,7 +88,7 @@ export default function MostActiveInstiutions() {
                 </Text>
                 <Space h={"xs"} />
 
-                <Text size="14px" c="#717579" fw={500}>
+                <Text size="16px" c="#1F2D3D" fw={700}>
                   50
                 </Text>
               </div>
@@ -100,7 +98,7 @@ export default function MostActiveInstiutions() {
                 </Text>
                 <Space h={"xs"} />
 
-                <Text size="14px" c="#717579" fw={500}>
+                <Text size="16px" c="#1F2D3D" fw={700}>
                   30
                 </Text>
               </div>
@@ -109,25 +107,15 @@ export default function MostActiveInstiutions() {
 
             <Divider my={"xl"} />
 
-            <Text size="14px" fw={600}>
-              Abstract
+            <Text size="15px" fw={600}>
+              Yearly Publication Trends
             </Text>
-            <Space h={"xl"} />
+            <Space h={"md"} />
+            <Text size="11px" fw={400} c="#717579">
+              2021 – 70 | 2022 – 110 | 2023 – 120
+            </Text>
 
-            <Text
-              size="11px"
-              fw={400}
-              c="#717579"
-              style={{ lineHeight: "21px" }}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum
-            </Text>
+            
 
             <Divider my={"xl"} />
 
@@ -161,7 +149,7 @@ export default function MostActiveInstiutions() {
             <Text size="15px" fw={600}>
               Keywords
             </Text>
-            <Space h={"xl"} />
+            <Space h={"md"} />
 
             <Text
               size="12px"
@@ -172,98 +160,54 @@ export default function MostActiveInstiutions() {
               AI, Healthcare, Predictive Analytics, Diagnostics
             </Text>
             <Divider my={"xl"} />
-
             <Text size="14px" fw={600}>
-              Author Information
-            </Text>
-            <Space h={"md"} />
-
-            <SimpleGrid cols={1}>
-              <Group>
-                <Text size="12px" fw={400} c="#717579">
-                  Name: Dr JohnDoe
-                </Text>
-              </Group>
-              <Group>
-                <Text size="12px" fw={400} c="#717579">
-                  Institution:AI Research Center
-                </Text>
-              </Group>
-              <Group>
-                <Text size="12px" fw={400} c="#717579">
-                  Other Publications: 15 Research Paper
-                </Text>
-                <Group>
-                  <Text size="15px" fw={600} c="#21232C">
-                    Email
-                  </Text>
-                  <TextInput
-                    readOnly
-                    bg={"#D5D7DA"}
-                    styles={{
-                      root: { borderRadius: "10px" },
-                      input: { backgroundColor: "#D5D7DA", color:"#717680",borderRadius:"10px" },
-                    }}
-                    leftSection={<MdOutlineEmail />}
-                    placeholder="Email"
-                    radius={"md"}
-                    size="xs"
-                    value={"john.doe@airesearch.tz"}
-                  />
-                </Group>
-              </Group>
-            </SimpleGrid>
-            <Divider my={"xl"} />
-            <Text size="14px" fw={600}>
-              Related Research
+              Top Researchers
             </Text>
             <Space h={"md"} />
 
             <SimpleGrid cols={1}>
               <Group>
                 <FaCircleCheck color="#1463FF" />
-                <Text size="10px" fw={400}>
-                  Smart Diagnostics with AI (2022)
+                <Text size="11px" fw={400}>
+                  Prof. Jane Smith – 50 Papers Published
                 </Text>
-                <Button
-                  variant="light"
-                  color="#717680"
-                  leftSection={<IoIosSearch size={15} />}
-                  size="compact-xs"
-                >
-                  View more
-                </Button>
               </Group>
               <Group>
                 <FaCircleCheck color="#1463FF" />
-                <Text size="10px" fw={400}>
-                  Predictive Analytics in Healthcare (2021)
+                <Text size="11px" fw={400}>
+                  Dr. John Doe – 40 Papers Published
                 </Text>
-                <Button
-                  variant="light"
-                  color="#717680"
-                  leftSection={<IoIosSearch size={15} />}
-                  size="compact-xs"
-                >
-                  View more
-                </Button>
               </Group>
               <Group>
                 <FaCircleCheck color="#1463FF" />
-                <Text size="10px" fw={400}>
-                  Personalized Medicine using Machine Learning (2023)
+                <Text size="11px" fw={400}>
+                  Dr. Laura Zhang – 30 Papers Published
                 </Text>
-                <Button
-                  variant="light"
-                  color="#717680"
-                  leftSection={<IoIosSearch size={15} />}
-                  size="compact-xs"
-                >
-                  View more
-                </Button>
               </Group>
             </SimpleGrid>
+           
           </Paper>
+          <Space h={"md"} />
+
+          <Group>
+            <Button
+              color="#1463FF"
+              variant="outline"
+              radius={"md"}
+              leftSection={ <IoMdEye /> }
+            >
+              View All Publications
+            </Button>
+            <Button
+              color="#1463FF"
+              variant="outline"
+              radius={"md"}
+              leftSection={<MdOutlineTravelExplore />}
+            >
+              Explore Ongoing Projects
+            </Button>
+            
+          </Group>
         </Grid.Col>
         <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
           <Text size="14px" fw={500}>

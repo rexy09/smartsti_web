@@ -93,22 +93,22 @@ function Sidebar({ setOpened }: SidebarProps) {
               />
               <NavLinkButton
                 setOpened={setOpened}
-                to={"/hub"}
+                to={"/knowledge_hub"}
                 label={"Knowledge Hub"}
                 iconKey={"hub"}
               />
 
               <NavLinkButton
                 setOpened={setOpened}
-                to={"/ai"}
-                label={"Ai Insights"}
+                to={"/analysis"}
+                label={"Sentiment Analysis"}
                 iconKey={"ai"}
               />
 
               <NavLinkButton
                 setOpened={setOpened}
-                to={"/collaboration"}
-                label={"Collaboration Tools"}
+                to={"/agreements"}
+                label={"Agreements"}
                 iconKey={"tools"}
               />
 
@@ -121,6 +121,12 @@ function Sidebar({ setOpened }: SidebarProps) {
 
               <NavLinkButton
                 setOpened={setOpened}
+                to={"/eve"}
+                label={"Eve AI"}
+                iconKey={"eve"}
+              />
+              <NavLinkButton
+                setOpened={setOpened}
                 to={"/settings"}
                 label={"Settings"}
                 iconKey={"settings"}
@@ -128,12 +134,6 @@ function Sidebar({ setOpened }: SidebarProps) {
             </Stack>
             <Space h="md" />
 
-            {/* <NavLinkButton
-              setOpened={setOpened}
-              to={"/eve"}
-              label={"Eve AI"}
-              iconKey={"eve"}
-            /> */}
             <Divider />
             <Space h="md" />
             <Button

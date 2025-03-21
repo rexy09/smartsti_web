@@ -382,3 +382,107 @@ export const researchProjectData: IResearchProject[] = [
     fundingSource: "AI Research Grant",
   },
 ];
+
+
+export interface ICitedPaper {
+  title: string;
+  author: string;
+  datePublished: string;
+  category: string;
+  citations: number;
+  impactFactor: number;
+  downloads: number;
+}
+
+export const citedPapersData: ICitedPaper[] = [
+  {
+    title: "AI in Healthcare",
+    author: "Dr. John Doe",
+    datePublished: "2022-03-10",
+    category: "AI Research",
+    citations: 850,
+    impactFactor: 9.8,
+    downloads: 12000,
+  },
+  {
+    title: "Smart Farming",
+    author: "Prof. Jane Smith",
+    datePublished: "2021-07-15",
+    category: "Agriculture",
+    citations: 120,
+    impactFactor: 8.5,
+    downloads: 9500,
+  },
+  {
+    title: "Renewable Energy Breakthroughs",
+    author: "Dr. Alex Kim",
+    datePublished: "2020-09-05",
+    category: "Engineering",
+    citations: 75,
+    impactFactor: 9.0,
+    downloads: 8800,
+  },
+  {
+    title: "Data Science in Education",
+    author: "Dr. Sarah Lee",
+    datePublished: "2019-11-20",
+    category: "STEM Education",
+    citations: 95,
+    impactFactor: 8.2,
+    downloads: 7800,
+  },
+  {
+    title: "Machine Learning for Healthcare",
+    author: "Dr. John Doe",
+    datePublished: "2023-01-08",
+    category: "AI Research",
+    citations: 200,
+    impactFactor: 9.5,
+    downloads: 8300,
+  },
+  {
+    title: "Agricultural Robotics",
+    author: "Prof. Jane Smith",
+    datePublished: "2022-05-14",
+    category: "Agriculture",
+    citations: 150,
+    impactFactor: 7.8,
+    downloads: 72000,
+  },
+  {
+    title: "Smart Cities and IoT",
+    author: "Dr. Alex Kim",
+    datePublished: "2021-12-01",
+    category: "Engineering",
+    citations: 300,
+    impactFactor: 8.1,
+    downloads: 6900,
+  },
+  {
+    title: "AI-Powered Diagnosis in Healthcare",
+    author: "Dr. Sarah Lee",
+    datePublished: "2020-06-22",
+    category: "AI Research",
+    citations: 400,
+    impactFactor: 7.9,
+    downloads: 7500,
+  },
+  {
+    title: "Renewable Materials for Sustainable Tech",
+    author: "Prof. Michael Chen",
+    datePublished: "2019-04-10",
+    category: "Environmental Science",
+    citations: 180,
+    impactFactor: 8.3,
+    downloads: 7100,
+  },
+  {
+    title: "Predictive Analytics in Agriculture",
+    author: "Dr. Laura Zhang",
+    datePublished: "2023-03-27",
+    category: "Agriculture",
+    citations: 250,
+    impactFactor: 7.8,
+    downloads: 6400,
+  },
+];

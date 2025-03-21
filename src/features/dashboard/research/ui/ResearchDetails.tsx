@@ -25,7 +25,6 @@ export default function ResearchDetails() {
 
   return (
     <div>
-      <Space h={"md"} />
       <Group justify="space-between">
         <div>
           <Group>

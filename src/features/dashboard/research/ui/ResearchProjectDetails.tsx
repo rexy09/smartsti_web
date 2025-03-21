@@ -13,12 +13,13 @@ import {
 } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { FaCircleCheck } from "react-icons/fa6";
-import { IoIosSearch, IoMdArrowRoundBack } from "react-icons/io";
+import { IoIosLink, IoIosSearch, IoMdArrowRoundBack } from "react-icons/io";
 import { useNavigate, useParams } from "react-router-dom";
 import { useBidServices } from "../services";
 import { IoShareSocialOutline } from "react-icons/io5";
 import { FiDownload } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
+import { CiCalendar } from "react-icons/ci";
 export default function ResearchProjectDetails() {
   const { } = useBidServices();
   const { id } = useParams();
@@ -30,7 +31,6 @@ export default function ResearchProjectDetails() {
 
   return (
     <div>
-      <Space h={"md"} />
       <Group justify="space-between">
         <div>
           <Group>
@@ -95,7 +95,7 @@ export default function ResearchProjectDetails() {
                 </Text>
               </div>
               <div>
-                <Button variant="light" color="gray" size="compact-xs">
+                <Button variant="light" color="gray" size="compact-xs" leftSection={<IoIosLink />}>
                   <Text size="14px" c="#0F1F26" fw={500}>
                     85 Citations
                   </Text>
@@ -103,9 +103,9 @@ export default function ResearchProjectDetails() {
                 <Space h={"xs"} />
 
                 <div>
-                  <Button variant="outline" color="#8399AF4D" size="compact-xs">
-                    <Text size="14px" c="#0F1F26" fw={500}>
-                      85 Citations
+                  <Button variant="outline" color="#2A2A3CB2" size="compact-xs" leftSection={<CiCalendar />}>
+                    <Text size="14px" c="#2A2A3CB2" fw={500}>
+                      Year 2023
                     </Text>
                   </Button>
                 </div>

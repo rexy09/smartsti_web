@@ -18,22 +18,22 @@ import { Color } from "../../../../common/theme";
 import { IUserResponse } from "../../../auth/types";
 import { PaginatedResponse } from "../../../services/types";
 import { IOrder } from "../../home/types";
-import ResearchStatisticCard from "../components/ResearchStatisticCard";
+import KnowledgeHubStatisticCard from "../components/KnowledgeHubStatisticCard";
 import { useBidServices } from "../services";
 import { useOpportunitiesParameters } from "../stores";
-import PatentTable from "./PatentTable";
-import PublicationInsightsTable from "./PublicationInsightsTable";
-import ResearchOutputsTable from "./ResearchOutputsTable";
-import ResearchProjectTable from "./ResearchProjectTable";
-import CitedPaperTable from "./CitedPaperTable";
-export default function Research() {
+import EducationalResourceTable from "./EducationalResourceTable";
+import FundingOpportunitiesTable from "./FundingOpportunitiesTable";
+import KnowledgeHubTable from "./KnowledgeHubTable";
+import TechnologyInnovationTable from "./InnovationTable";
+import InnovationTable from "./InnovationTable";
+
+export default function KnowledgeHub() {
   const { cancelBid, acceptBid, declineBid, getAvailableDrivers } =
     useBidServices();
   const { id } = useParams();
   const authUser = useAuthUser<IUserResponse>();
   const navigate = useNavigate();
   const parameters = useOpportunitiesParameters();
-
 
   const [isLoading, setIsLoading] = useState(false);
   const [loadingOrder, setLoadingOrder] = useState(false);
@@ -143,37 +143,36 @@ export default function Research() {
 
   const fetchData = () => {
     setLoadingOrder(true);
-
-    
   };
 
-  
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [activeTab, setActiveTab] = useState<{ tabId: string, title: string }>({ tabId: "0", title:"Research Outputs"});
+  const [activeTab, setActiveTab] = useState<{ tabId: string; title: string }>({
+    tabId: "0",
+    title: "Knowledge Hub",
+  });
   const tabs = [
-    { tabId: "0", title: "Research Outputs" },
+    { tabId: "0", title: "Knowledge Hub" },
     {
       tabId: "1",
-      title: "Publication Insights"
+      title: "Publication Insights",
     },
     {
       tabId: "2",
-      title: "Total Patents"
+      title: "Educational Resources",
     },
     {
       tabId: "3",
-      title: "Ongoing Projects"
+      title: "Funding Opportunities",
     },
     {
       tabId: "4",
-      title: "Top Cited Paper"
+      title: "Technology & Innovation",
     },
     {
       tabId: "5",
-      title: "Most Active Institution"
-    }
+      title: "Innovations",
+    },
   ];
   useEffect(() => {
     if (searchParams.get("tab")) {
@@ -190,18 +189,17 @@ export default function Research() {
       <Group justify="space-between">
         <div>
           <Text size="24px" fw={500}>
-           { activeTab.title}
+            {activeTab.title}
           </Text>
           <Space h={"5px"} />
-          <UnstyledButton onClick={() => {
-            setActiveTab(tabs[0]);
-
-          }}>
-
-          <Text size="12px" fw={500} c="#27A8DE" fs={"italic"} >
-            {activeTab.tabId =="0"?
-              "Total Published Papers" :"Research Outputs"}
-          </Text>
+          <UnstyledButton
+            onClick={() => {
+              setActiveTab(tabs[0]);
+            }}
+          >
+            <Text size="12px" fw={500} c="#27A8DE" fs={"italic"}>
+              {activeTab.tabId == "0" ? "" : "Knowledge Hub"}
+            </Text>
           </UnstyledButton>
         </div>
         <Group>
@@ -257,83 +255,87 @@ export default function Research() {
       <SimpleGrid cols={{ base: 1, xs: 2, sm: 2, md: 5 }}>
         {!isLoading ? (
           <>
-            <ResearchStatisticCard
-              title="Publication Insights"
-              iconkey="published"
+            <KnowledgeHubStatisticCard
+              title="STI Policies & Guidelines"
+              iconkey="policies"
               statusColor="#4D5BD4"
               count={1250}
               onClick={() => {
-                setActiveTab(tabs[1]);
-                searchParams.set('tab', tabs[1].tabId);
+                setActiveTab(tabs[0]);
+                searchParams.set("tab", tabs[0].tabId);
                 setSearchParams(searchParams);
               }}
             />
-            <ResearchStatisticCard
-              title="Total Patents"
-              count={250}
-              iconkey="patent"
+            <KnowledgeHubStatisticCard
+              title="Educational Resources"
+              subscript="Learning Modules"
+              count={25}
+              iconkey="education"
               statusColor="#7CC1C5"
               onClick={() => {
                 setActiveTab(tabs[2]);
-                searchParams.set('tab', tabs[2].tabId);
+                searchParams.set("tab", tabs[2].tabId);
                 setSearchParams(searchParams);
               }}
             />
-            <ResearchStatisticCard
-              title="Ongoing Projects"
-              iconkey="project"
+            <KnowledgeHubStatisticCard
+              title="Funding Opportunities"
+              subscript="Open Grants"
+              iconkey="education"
               statusColor="#6361CD"
               count={85}
               onClick={() => {
                 setActiveTab(tabs[3]);
-                searchParams.set('tab', tabs[3].tabId);
+                searchParams.set("tab", tabs[3].tabId);
                 setSearchParams(searchParams);
-
               }}
             />
-            <ResearchStatisticCard
-              title="Top Cited Paper"
-              iconkey="paper"
+            <KnowledgeHubStatisticCard
+              title="Technology & Innovation"
+              subscript="Recognized Projects"
+              iconkey="awards"
               statusColor="#6E9FF3"
-              count={850}
+              count={5}
               onClick={() => {
                 setActiveTab(tabs[4]);
-                searchParams.set('tab', tabs[4].tabId);
+                searchParams.set("tab", tabs[4].tabId);
                 setSearchParams(searchParams);
-
               }}
             />
-            <ResearchStatisticCard
-              title="Most Active Institution"
-              subtitle="University of Tanzania"
-              iconkey="university"
+            <KnowledgeHubStatisticCard
+              title=" Innovations"
+              subscript="Reports Available"
+              count={7}
+              iconkey="innovation"
               statusColor="#6E9FF3"
               onClick={() => {
-                navigate("/research/instiutions")
+                setActiveTab(tabs[5]);
+                searchParams.set("tab", tabs[5].tabId);
+                setSearchParams(searchParams);
               }}
             />
           </>
         ) : null}
       </SimpleGrid>
       <Space h={"md"} />
-      <Tabs
-        keepMounted={false}
-        value={activeTab.tabId}
-      >
+      <Tabs keepMounted={false} value={activeTab.tabId}>
         <Tabs.Panel value="0">
-          <ResearchOutputsTable />
+          <KnowledgeHubTable />
         </Tabs.Panel>
         <Tabs.Panel value="1">
-          <PublicationInsightsTable />
+          <KnowledgeHubTable />
         </Tabs.Panel>
         <Tabs.Panel value="2">
-          <PatentTable />
+          <EducationalResourceTable />
         </Tabs.Panel>
         <Tabs.Panel value="3">
-          <ResearchProjectTable />
+          <FundingOpportunitiesTable />
         </Tabs.Panel>
         <Tabs.Panel value="4">
-          <CitedPaperTable />
+          <TechnologyInnovationTable />
+        </Tabs.Panel>
+        <Tabs.Panel value="5">
+          <InnovationTable />
         </Tabs.Panel>
       </Tabs>
     </div>

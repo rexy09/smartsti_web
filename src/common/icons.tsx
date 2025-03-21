@@ -43,6 +43,12 @@ import patent from "../assets/icons/patent.svg";
 import project from "../assets/icons/project.svg";
 import paper from "../assets/icons/paper.svg";
 import university from "../assets/icons/university.svg";
+import policies from "../assets/icons/policies.svg";
+import education from "../assets/icons/education.svg";
+import awards from "../assets/icons/awards.svg";
+import innovation from "../assets/icons/innovation.svg";
+import upcoming from "../assets/icons/upcoming.svg";
+import agreement from "../assets/icons/agreement.svg";
 
 
 interface CustomIconProps {
@@ -122,4 +128,10 @@ export const Icons = {
   paper: createCustomIcon({ src: paper }),
   university: createCustomIcon({ src: university }),
   patent: createCustomIcon({ src: patent }),
+  policies: createCustomIcon({ src: policies }),
+  education: createCustomIcon({ src: education }),
+  awards: createCustomIcon({ src: awards }),
+  innovation: createCustomIcon({ src: innovation }),
+  upcoming: createCustomIcon({ src: upcoming }),
+  agreement: createCustomIcon({ src: agreement }),
 };
