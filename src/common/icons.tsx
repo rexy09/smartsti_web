@@ -49,6 +49,9 @@ import awards from "../assets/icons/awards.svg";
 import innovation from "../assets/icons/innovation.svg";
 import upcoming from "../assets/icons/upcoming.svg";
 import agreement from "../assets/icons/agreement.svg";
+import topic from "../assets/icons/topic.svg";
+import overall from "../assets/icons/overall.svg";
+import score from "../assets/icons/score.svg";
 
 
 interface CustomIconProps {
@@ -134,4 +137,7 @@ export const Icons = {
   innovation: createCustomIcon({ src: innovation }),
   upcoming: createCustomIcon({ src: upcoming }),
   agreement: createCustomIcon({ src: agreement }),
+  topic: createCustomIcon({ src: topic }),
+  overall: createCustomIcon({ src: overall }),
+  score: createCustomIcon({ src: score }),
 };

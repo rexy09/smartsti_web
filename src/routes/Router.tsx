@@ -24,15 +24,16 @@ import MostActiveInstiutionsPage from "../pages/dashboard/MostActiveInstiutionsP
 import KnowledgeHubPage from "../pages/dashboard/KnowledgeHubPage";
 import AgreementsPage from "../pages/dashboard/AgreementsPage";
 import AgreementDetailsPage from "../pages/dashboard/AgreementDetailsPage";
+import SentimentAnalysisPage from "../pages/dashboard/SentimentAnalysisPage";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route
         element={
-          <RequireAuth fallbackPath={"/login"}>
+          // <RequireAuth fallbackPath={"/login"}>
             <DashboardLayout />
-          </RequireAuth>
+          // </RequireAuth>
         }
         // errorElement={<ServerError />}
       >
@@ -52,6 +53,7 @@ export const router = createBrowserRouter(
         <Route index path="/notifications" element={<NotificationPage />} />
         <Route index path="/settings" element={<SettingsPage />} />
         <Route index path="/reports" element={<ReportsPage />} />
+        <Route index path="/sentiment_analysis" element={<SentimentAnalysisPage />} />
       </Route>
 
 

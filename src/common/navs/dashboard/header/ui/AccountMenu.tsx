@@ -40,12 +40,12 @@ function AccountMenu({ }: Props) {
             maw={200}
           >
             <Group>
-              <Avatar src={authUser?.user_type === "sender" ? authUser?.user?.profile_img : authUser?.owner?.user.profile_img} radius="sm" />
+              <Avatar src={"https://s3-alpha-sig.figma.com/img/b7c1/5587/5755e2904963145b165313ddd107bf49?Expires=1743379200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=XjICcDDXI1O4sLx47xkXv59rQa2eg9VsY9lxSYQfPOiOGxM5yh35kS4qSQ-ZgQjPGOsVosHa~YX8T2W~fQGrdto~30u5PQz74nHqR1RkKbkvVyIzUgQHQpFsre6IpL5MIKe7KBb536rgMqIK6rQTXbPQ885hW9JQb80FGK-NvO1Jbbs8CrCBY7WIMFP86sGNJwYLAgdlKaMqnFliKsGO3yBN7hKLWcIsdItTuLkXdKv~34sLAjw2aHajha3MODDhl-GR3aY~xcU9HoKHSEECOLIlocrjKYEUpG~vxmSHwxOANWctgf1oqPs28pVsaO7RfPDBwD3hUVfCOQxBFVj6cw__"} radius="sm" />
 
               <div style={{ flex: 1 }}>
                 <Text size="14px" fw={500} c={"#2A2A3C"}  tt={"capitalize"}>
-                  
-                  {authUser?.user ? authUser?.user?.full_name : authUser?.owner?.user.full_name}
+                  John Juma
+                  {/* {authUser?.user ? authUser?.user?.full_name : authUser?.owner?.user.full_name} */}
                 </Text>
                 <Space h="5px" />
 
@@ -55,9 +55,9 @@ function AccountMenu({ }: Props) {
                   fw={500}
                   tt="capitalize"
                 >
-
-                  {authUser?.user_type === "sender" && "Cargo Owner"}
-                  {authUser?.user_type === "owner" && "Transpoter"}
+                  Superadmin
+                  {/* {authUser?.user_type === "sender" && "Cargo Owner"}
+                  {authUser?.user_type === "owner" && "Transpoter"} */}
                 </Text>
               </div>
             </Group>

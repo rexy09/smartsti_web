@@ -100,7 +100,7 @@ function Sidebar({ setOpened }: SidebarProps) {
 
               <NavLinkButton
                 setOpened={setOpened}
-                to={"/analysis"}
+                to={"/sentiment_analysis"}
                 label={"Sentiment Analysis"}
                 iconKey={"ai"}
               />

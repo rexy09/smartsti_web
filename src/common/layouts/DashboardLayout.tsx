@@ -18,7 +18,7 @@ export default function DashboardLayout() {
         backgroundColor: "#f9f9f9",
       }}
     >
-      <AppShell.Navbar p="0px">
+      <AppShell.Navbar p="0px" withBorder={false}>
         <Sidebar opened={opened} setOpened={toggle} />
       </AppShell.Navbar>
       <AppShell.Main>

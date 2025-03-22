@@ -13,9 +13,11 @@ import { Color, FontFamily } from "../../../common/theme";
 import useAuthServices from "../services";
 import { UserCredentials } from "../types";
 import Env from "../../../config/env";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
   const { submitted, setSubmitted } = useAuthServices();
+  const navigate = useNavigate();
 
   const form = useForm<UserCredentials>({
     initialValues: {
@@ -68,7 +70,9 @@ function LoginForm() {
     <>
       <form
         onSubmit={form.onSubmit(() => {
-          keycloackLogin();
+          navigate("/");
+
+          // keycloackLogin();
         })}
       >
         <Text

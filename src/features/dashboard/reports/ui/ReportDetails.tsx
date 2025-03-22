@@ -21,7 +21,7 @@ import { FiDownload } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
 import { CiCalendar } from "react-icons/ci";
 import { Icons } from "../../../../common/icons";
-export default function ResearchProjectDetails() {
+export default function ReportDetails() {
   const { } = useBidServices();
   const { id } = useParams();
   const navigate = useNavigate();

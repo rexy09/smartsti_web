@@ -130,7 +130,7 @@ export function DashboardStatistics() {
       searchEndDate ?? getFormattedDate(endDate)
     );
 
-    fetchData();
+    // fetchData();
   }, []);
 
   const skeletons = Array.from({ length: 3 }, (_, index) => (
@@ -231,7 +231,7 @@ export function DashboardStatistics() {
       <Space h="md" />
 
       <SimpleGrid cols={{ base: 1, xs: 2, sm: 2, md: 3 }} spacing={{ base: 30 }}>
-        {ordersStatistics && !isLoading ? (
+        {!isLoading ? (
           <>
             <DashboardStatisticCard
               title="MoU Implementation Status"
