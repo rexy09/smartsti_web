@@ -16,7 +16,6 @@ import mainLogo from "../../../../assets/smartsti_logo2.png";
 import { useMediaQuery } from "@mantine/hooks";
 import useSignOut from "react-auth-kit/hooks/useSignOut";
 import { useNavigate } from "react-router-dom";
-import keycloak from "../../../../config/keycloak-config";
 import { Icons } from "../../../icons";
 import { Color } from "../../../theme";
 import AccountMenu from "../header/ui/AccountMenu";
@@ -144,8 +143,6 @@ function Sidebar({ setOpened }: SidebarProps) {
                 signOut();
                 localStorage.clear();
                 navigate("/login");
-                keycloak.init();
-                keycloak.logout({ redirectUri: "http://localhost:5173/login" });
               }}
             >
               <Text fz="14px" fw={500}>
