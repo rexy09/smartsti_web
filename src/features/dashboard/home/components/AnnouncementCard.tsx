@@ -15,7 +15,7 @@ export default function AnnouncementCard({}: Props) {
     <Card padding={'3px'} maw={280}>
       <Card.Section>
         <Image
-          src="https://s3-alpha-sig.figma.com/img/8815/5ce8/9656fb4f2ae485c7ba9f087e1ae2bf96?Expires=1743379200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=GFdZD3shIVEq919pesV~Vg98yYNavXUUbO6sqZy1D1Qg3WtZMznejkdqtREhmhUELxZ0Q2Vs6R748ueFMxVZSNOn-4B4HQtuUeLZaqtwRROWdBxxW9LjCS-bw1sIvj5xqLGnoMgQAiKAMfVt58oWPEO~BbOzHCNYX872QdDW30d7pQP9iJ5wVuXKWFArsEPSjLepM50sjUqM~ALCOkja2YgjITQDilAwUWSC943yKc~UQF-T1PKhEYyB7i7jvTa2qjtwdPXOlBM~m9cSvlcTKXoFp3n2XMl7ui4Q6rDOXYUkhOg9NA8AePvoV6136q9e73W6hDCjrzDIFCAQLmt4Fw__"
+          src="https://s3-alpha-sig.figma.com/img/8815/5ce8/9656fb4f2ae485c7ba9f087e1ae2bf96?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=KUCjvqEPBCRwkzfV3OJbwMCkjPTDV7ywHsGpfJDoLrRXatuxsFqbcMdfR1x9W-LCBSulYm8YChTVTXXZ1TJx8-P6jkATnZII24sqK28UDZLKr66ubC714YTXwqraFzUIEZCdzPfS1fpt5Tmi8434dqAP-ABHdVrG-eqNR-8ixyjGFr5PLKJey2hiRSPzOZzTo-gNkFCRqZx3jVZGy5-d6c9g-3FmGTwvXTj1AWMBw9141WYAR9sk~u~VeqJVLxTFETrRmDYlBOn95CAwCsu5UrAWZ4lCEYz-ijqXc-ivyppDnvdBGPOVlbsFGOlmBLgBVes-yKu9a4y9AgNC2VBU4g__"
           height={170}
           alt="image"
           radius="md"

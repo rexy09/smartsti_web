@@ -11,7 +11,7 @@ export default function OpportunitiesCard({}: Props) {
         onClick={() => {
           navigate("/opportunities/" + "opportunity.name");
         }}
-        src="https://s3-alpha-sig.figma.com/img/2f35/20d6/a1154c0d501b2f945feada910ab9a703?Expires=1743379200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=dZVTP2J~eAK0XgcGGsV5T9xaFWkzF21iIYtR1qrT2MDfqhep5ieueCCdauV7NzIW2nGafqDCT27-k8ktl63QoolqhEtdlYd0SVR0EeNPoYsCRdFwOR1q~QFWtwadWNCo7CI3y8oHhbk8KX7Gsv3BkmJFmeOQqIGoRUsyNvdwOBlHqW1ZQKJWk9uZYcJ4~ILwaNdwmEZ09-M-E7ri4RsHp2ZRAIB909SYqCSx8~JqJofmE2i~cCtWboiVT1kHp4oUa9MS44dZ7iiyiOS23V2on8nnrrQ5odDr~VS944xc2JhRZFD9lO0lNYtcQhpqQO1Qr8~KCb~o2763lIQpuegTcQ__"
+        src="https://s3-alpha-sig.figma.com/img/2f35/20d6/a1154c0d501b2f945feada910ab9a703?Expires=1744588800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=jfM0c47XtjWm2wtLzr69XSPJ8p5pC3EYakMllehwfLDUJpB9M3nP0wppZ46VxL1I75~55WdVbaX9fa9NC~TDyI2cB2rgaxsPZ9seNV4m~3nrG7XJyXPAeAjxmrRPgpoIpUqRerMiM1yH66OtZkgTYaI0gbjwhDSwA6jNCmGQj3zwpOP4RMEQWk2dP-jOof8WOrJFmmLduvQilsWI6LipYO~WZlB0eqgujsCXXpxIkqR5fOi4bZnbrGzYJRS0~bcbUmRIByJ0notKVeqG~A4BfV1rXiqdH9FsXBVkW8B2CEZiyIxIUNiogcJcW4wi0bhEM-e73x8BZh-gVpbh1Fv5Jw__"
         h={160}
         alt="image"
       />
