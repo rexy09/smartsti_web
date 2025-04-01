@@ -10,20 +10,20 @@ import {
   Text,
   UnstyledButton
 } from "@mantine/core";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { FaCircleCheck } from "react-icons/fa6";
 import { FiDownload } from "react-icons/fi";
 import { IoMdArrowRoundBack, IoMdEye } from "react-icons/io";
 import { IoShareSocialOutline } from "react-icons/io5";
-import { useNavigate, useParams } from "react-router-dom";
-import { useBidServices } from "../services";
 import { MdOutlineTravelExplore } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+import { useResearchServices } from "../services";
 export default function MostActiveInstiutions() {
-  const { } = useBidServices();
-  const { id } = useParams();
+  const { } = useResearchServices();
+  // const { id } = useParams();
   const navigate = useNavigate();
 
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => { }, []);
 

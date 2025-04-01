@@ -1,5 +1,5 @@
 import { create } from "zustand";
-export interface OpportunitiesFilterParameters {
+export interface ReportFilterParameters {
   startDate: string;
   endDate: string;
   region: string;
@@ -15,7 +15,7 @@ export interface Actions {
   reset: () => void;
 }
 // define the initial state
-const initialState: OpportunitiesFilterParameters = {
+const initialState: ReportFilterParameters = {
   startDate: "",
   endDate: "",
   region: "",
@@ -23,7 +23,7 @@ const initialState: OpportunitiesFilterParameters = {
   search: "",
 };
 
-export const useOpportunitiesParameters = create<OpportunitiesFilterParameters & Actions>((set) => ({
+export const useOpportunitiesParameters = create<ReportFilterParameters & Actions>((set) => ({
   ...initialState,
 
   updateText(type, val) {

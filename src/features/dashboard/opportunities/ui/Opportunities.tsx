@@ -6,20 +6,17 @@ import {
   Space,
   Text
 } from "@mantine/core";
-import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { useNavigate, useParams } from "react-router-dom";
 import { Icons } from "../../../../common/icons";
 import { Color } from "../../../../common/theme";
-import { IUserResponse } from "../../../auth/types";
 import { useOpportunitiesParameters } from "../stores";
 import OpportunitiesSection from "./OpportunitiesSection";
 import OpportunitiesTable from "./OpportunitiesTable";
 export default function Opportunities() {
  
-  const { id } = useParams();
-  const authUser = useAuthUser<IUserResponse>();
-  const navigate = useNavigate();
+  // const { id } = useParams();
+  // const authUser = useAuthUser<IUserResponse>();
+  // const navigate = useNavigate();
   const parameters = useOpportunitiesParameters();
 
 

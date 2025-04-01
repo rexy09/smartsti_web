@@ -1,5 +1,5 @@
-import { Badge, Center, Divider, Flex, Grid, Group, Paper, SimpleGrid, Space, Stack, Text } from "@mantine/core";
 import { DonutChart } from '@mantine/charts';
+import { Badge, Center, Divider, Grid, Group, Paper, Space, Stack, Text } from "@mantine/core";
 import { PiDotsThreeOutlineThin } from "react-icons/pi";
 export const donutChartData = [
   { name: "Total Hubs", value: 120, color: "#036AE3" },
@@ -8,7 +8,7 @@ export const donutChartData = [
 ];
 
 interface Props { }
-export default function InnovationHubData(props: Props) {
+export default function InnovationHubData({}: Props) {
   return (
     <Paper radius="10px" style={{ border: "1px solid #EFF2F1" }}>
 

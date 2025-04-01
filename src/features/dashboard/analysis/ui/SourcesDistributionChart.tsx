@@ -1,5 +1,5 @@
-import { Badge, Center, Divider, Flex, Grid, Group, Paper, SimpleGrid, Space, Stack, Text } from "@mantine/core";
-import { DonutChart, RadialBarChart } from '@mantine/charts';
+import { RadialBarChart } from '@mantine/charts';
+import { Badge, Divider, Grid, Group, Paper, Space, Stack, Text } from "@mantine/core";
 import { PiDotsThreeOutlineThin } from "react-icons/pi";
 const chartData = [
   { name: 'Academic Journals', value: 65.88, color: '#1463FF' },
@@ -9,7 +9,7 @@ const chartData = [
 ];
 
 interface Props { }
-export default function SourcesDistributionChart(props: Props) {
+export default function SourcesDistributionChart({}: Props) {
   return (
     <Paper radius="10px" style={{ border: "1px solid #EFF2F1" }}>
 

@@ -1,8 +1,8 @@
-import { Card, Flex, Group, Image, Paper, Rating, Space, Text } from "@mantine/core";
+import { Flex, Group, Image, Paper, Rating, Space, Text } from "@mantine/core";
+import { FaUser } from "react-icons/fa";
+import { GoClock } from "react-icons/go";
 import { Icons } from "../../../../common/icons";
 import { getColorForState } from "../../../hooks/utils";
-import { GoClock } from "react-icons/go";
-import { FaUser } from "react-icons/fa";
 
 const learningPoints= [
   'Critical Thinking',
@@ -23,7 +23,7 @@ const requirements= [
   'Must be affiliated with a recognized institution'
 ];
 interface Props {}
-export default function OpportunityDetailsCard(props: Props) {
+export default function OpportunityDetailsCard({}: Props) {
   return (
     <Paper
       p={"xl"}

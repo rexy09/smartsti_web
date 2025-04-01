@@ -8,25 +8,23 @@ import {
   SimpleGrid,
   Space,
   Text,
-  TextInput,
-  UnstyledButton,
+  UnstyledButton
 } from "@mantine/core";
-import { useEffect, useState } from "react";
-import { FaCircleCheck, FaRegFilePdf } from "react-icons/fa6";
-import { IoIosLink, IoIosSearch, IoMdArrowRoundBack } from "react-icons/io";
-import { useNavigate, useParams } from "react-router-dom";
-import { useBidServices } from "../services";
-import { IoShareSocialOutline } from "react-icons/io5";
-import { FiDownload } from "react-icons/fi";
-import { MdOutlineEmail } from "react-icons/md";
+import { useEffect } from "react";
 import { CiCalendar } from "react-icons/ci";
+import { FaCircleCheck, FaRegFilePdf } from "react-icons/fa6";
+import { FiDownload } from "react-icons/fi";
+import { IoMdArrowRoundBack } from "react-icons/io";
+import { IoShareSocialOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 import { Icons } from "../../../../common/icons";
+import { useAgreementServices } from "../services";
 export default function ResearchProjectDetails() {
-  const { } = useBidServices();
-  const { id } = useParams();
+  const { } = useAgreementServices();
+  // const { id } = useParams();
   const navigate = useNavigate();
 
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => { }, []);
 

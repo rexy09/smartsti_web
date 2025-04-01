@@ -17,7 +17,7 @@ export const lineChartData = [
 ];
 
 interface Props { }
-export default function ResearchOutputGrowth(props: Props) {
+export default function ResearchOutputGrowth({}: Props) {
   return (
     <Paper radius={"md"} p={"20px"}>
       <div >

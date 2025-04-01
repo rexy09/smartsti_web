@@ -31,12 +31,12 @@ export function DashboardStatistics() {
   const { getOrdersStatistics, getOrders, getOngoingOrders } =
     useDashboardServices();
   const [isLoading, setIsLoading] = useState(false);
-  const [loadingOrders, setLoadingOrders] = useState(false);
+  const [_loadingOrders, setLoadingOrders] = useState(false);
   const [openStartDate, setOpenStartDate] = useState(false);
   const [openEndDate, setOpenEndDate] = useState(false);
-  const [ordersStatistics, setOrdersStatistics] = useState<any>();
-  const [orders, setOrders] = useState<PaginatedResponse<IOrder>>();
-  const [ongoingOrders, setOngoingOrders] =
+  const [_ordersStatistics, setOrdersStatistics] = useState<any>();
+  const [_orders, setOrders] = useState<PaginatedResponse<IOrder>>();
+  const [_ongoingOrders, setOngoingOrders] =
     useState<PaginatedResponse<IOrder>>();
   const getFirstDayOfCurrentMonth = (): Date => {
     const today = new Date();

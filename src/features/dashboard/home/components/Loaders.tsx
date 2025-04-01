@@ -1,4 +1,4 @@
-import { Paper, Group, Space, Skeleton, Flex, Grid, Stack } from "@mantine/core";
+import { Flex, Group, Paper, Skeleton, Space, Stack } from "@mantine/core";
 
 export  function DashboardStatisticCardSkeleton() {
     return (

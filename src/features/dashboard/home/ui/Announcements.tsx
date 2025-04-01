@@ -3,7 +3,7 @@ import AnnouncementCard from "../components/AnnouncementCard";
 import { Carousel } from "@mantine/carousel";
 
 interface Props {}
-export default function Announcements(props: Props) {
+export default function Announcements({}: Props) {
   return (
     <Paper radius="10px" style={{ border: "1px solid #EFF2F1" }}>
       <Text size="18px" c="#1F2D3D" fw={600} p="20px">

@@ -8,13 +8,12 @@ import {
 } from "@mantine/core";
 import { BsThreeDots } from "react-icons/bs";
 import { MdOutlineClear } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
 import { CustomTable } from "../../../../common/components/Table/CustomTable";
 import { Icons } from "../../../../common/icons";
 import { Color } from "../../../../common/theme";
 import { PaginatedResponse } from "../../../services/types";
 import { useOpportunitiesParameters } from "../stores";
-import {  innovationData, InnovationData } from "../types";
+import { innovationData } from "../types";
 interface Props {
   data?: PaginatedResponse<any>;
   loadingOrders?: boolean;
@@ -24,19 +23,19 @@ interface Props {
 export default function InnovationTable({ fetchOrders }: Props) {
   const parameters = useOpportunitiesParameters();
   // A small helper to color-code the status
-  const getStatusColor = (status: InnovationData["status"]): string => {
-    switch (status) {
-      case "Ongoing":
-        return "#007bff"; // Blue
-      case "Pending":
-        return "#ffc107"; // Yellow
-      case "Completed":
-        return "#28a745"; // Green
-      default:
-        return "#6c757d"; // Gray (fallback)
-    }
-  };
-  const navigate = useNavigate();
+  // const getStatusColor = (status: InnovationData["status"]): string => {
+  //   switch (status) {
+  //     case "Ongoing":
+  //       return "#007bff"; // Blue
+  //     case "Pending":
+  //       return "#ffc107"; // Yellow
+  //     case "Completed":
+  //       return "#28a745"; // Green
+  //     default:
+  //       return "#6c757d"; // Gray (fallback)
+  //   }
+  // };
+  // const navigate = useNavigate();
 
   const rows = innovationData?.map((row, index) => (
     <Table.Tr key={index}>

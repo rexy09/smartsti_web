@@ -5,31 +5,25 @@ import {
   Space,
   Text
 } from "@mantine/core";
-import { useState } from "react";
-import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 import { BsBookmarkPlus } from "react-icons/bs";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { IoShareSocialOutline } from "react-icons/io5";
-import { useNavigate, useParams } from "react-router-dom";
-import { IUserResponse } from "../../../auth/types";
-import { PaginatedResponse } from "../../../services/types";
-import { IOrder } from "../../home/types";
+import { useNavigate } from "react-router-dom";
 import OpportunityDetailsCard from "../components/OpportunityDetailsCard";
-import { useOpportunitiesParameters } from "../stores";
 export default function OpportunityDetails() {
  
-  const { id } = useParams();
-  const authUser = useAuthUser<IUserResponse>();
+  // const { id } = useParams();
+  // const authUser = useAuthUser<IUserResponse>();
   const navigate = useNavigate();
-  const parameters = useOpportunitiesParameters();
+  // const parameters = useOpportunitiesParameters();
 
 
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [loadingOrder, setLoadingOrder] = useState(false);
-  const [order, setOrder] = useState<IOrder>();
-  const [bids, setBids] = useState<PaginatedResponse<any>>();
-  const [dirivers, setDirivers] = useState<PaginatedResponse<any>>();
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [loadingOrder, setLoadingOrder] = useState(false);
+  // const [order, setOrder] = useState<IOrder>();
+  // const [bids, setBids] = useState<PaginatedResponse<any>>();
+  // const [dirivers, setDirivers] = useState<PaginatedResponse<any>>();
 
 
 

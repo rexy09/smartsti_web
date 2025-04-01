@@ -2,6 +2,8 @@ import "@mantine/carousel/styles.css";
 import "@mantine/charts/styles.css";
 import { Button, createTheme, MantineProvider, Select, TextInput } from "@mantine/core";
 import "@mantine/core/styles.css";
+import "@mantine/dates/styles.css";
+import '@mantine/dropzone/styles.css';
 import { Notifications } from "@mantine/notifications";
 import "@mantine/notifications/styles.css";
 import AuthProvider from "react-auth-kit/AuthProvider";
@@ -10,10 +12,6 @@ import { RouterProvider } from "react-router-dom";
 import "./App.css";
 import { Color, FontFamily } from "./common/theme";
 import { router } from "./routes/Router";
-import "@mantine/dates/styles.css";
-import '@mantine/dropzone/styles.css';
-import { Libraries, LoadScript } from "@react-google-maps/api";
-import Env from "./config/env";
 
 const theme = createTheme({
   fontFamily: FontFamily.Inter,

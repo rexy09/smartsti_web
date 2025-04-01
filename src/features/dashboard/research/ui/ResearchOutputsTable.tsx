@@ -8,7 +8,6 @@ import {
 } from "@mantine/core";
 import { FiDownload } from "react-icons/fi";
 import { MdOutlineClear } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
 import { CustomTable } from "../../../../common/components/Table/CustomTable";
 import { Icons } from "../../../../common/icons";
 import { Color } from "../../../../common/theme";
@@ -24,7 +23,6 @@ interface Props {
 export default function ResearchOutputsTable({ fetchOrders }: Props) {
   const parameters = useOpportunitiesParameters();
 
-  const navigate = useNavigate();
 
   const rows = researchData?.map((row, index) => (
     <Table.Tr key={index}>

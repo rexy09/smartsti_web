@@ -9,11 +9,10 @@ import {
 } from "@mantine/core";
 import { isEmail, isNotEmpty, useForm } from "@mantine/form";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Color, FontFamily } from "../../../common/theme";
 import useAuthServices from "../services";
 import { UserCredentials } from "../types";
-import Env from "../../../config/env";
-import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
   const { submitted, setSubmitted } = useAuthServices();
@@ -44,7 +43,7 @@ function LoginForm() {
   const keycloackLogin = async () => {
     setSubmitted(true);
 
-    window.location.href = `${Env.authURL}/login?login_hint=${encodeURIComponent(form.values.username)}`;
+    navigate("/");
 
     setSubmitted(false);
   };
@@ -56,23 +55,16 @@ function LoginForm() {
   }, []);
 
   const handleRegistration = () => {
-    const registrationUrl =
-      `https://accounts.skyconnect.co.tz/realms/flex/protocol/openid-connect/registrations` +
-      `?client_id=flex-sample-app` +
-      `&response_type=code` +
-      `&scope=openid profile email phone offline_access` +
-      `&redirect_uri=${window.location.origin}/login`;
+    navigate("/");
 
-    window.location.href = registrationUrl;
   };
 
   return (
     <>
       <form
         onSubmit={form.onSubmit(() => {
-          navigate("/");
 
-          // keycloackLogin();
+          keycloackLogin();
         })}
       >
         <Text

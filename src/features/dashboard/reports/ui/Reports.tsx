@@ -6,23 +6,19 @@ import {
   Text
 } from "@mantine/core";
 import { useEffect, useState } from "react";
-import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 import { FiDownload } from "react-icons/fi";
 import { IoMdAdd } from "react-icons/io";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { IUserResponse } from "../../../auth/types";
 import ReportStatisticCard from "../components/ReportStatisticCard";
-import { useOpportunitiesParameters } from "../stores";
 import ReportTable from "./ReportTable";
 export default function Reports() {
-  const { id } = useParams();
-  const authUser = useAuthUser<IUserResponse>();
-  const navigate = useNavigate();
-  const parameters = useOpportunitiesParameters();
+  // const { id } = useParams();
+  // const authUser = useAuthUser<IUserResponse>();
+  // const navigate = useNavigate();
+  // const parameters = useOpportunitiesParameters();
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, _setIsLoading] = useState(false);
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  // const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => { }, []);
 

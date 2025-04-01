@@ -10,7 +10,7 @@ import {
 import { BsThreeDotsVertical } from "react-icons/bs";
 import coat_of_arms from "../../../../assets/coat_of_arms.svg";
 interface Props { }
-export default function AnnouncementCard(props: Props) {
+export default function AnnouncementCard({}: Props) {
   return (
     <Card padding={'3px'} maw={280}>
       <Card.Section>

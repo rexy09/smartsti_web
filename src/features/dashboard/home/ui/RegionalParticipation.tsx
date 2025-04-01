@@ -17,7 +17,7 @@ export const lineChartData = [
 ];
 
 interface Props { }
-export default function RegionalParticipation(props: Props) {
+export default function RegionalParticipation({}: Props) {
   return (
     <Paper radius={"md"} p={"20px"}>
       <div >

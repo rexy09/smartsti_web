@@ -6,9 +6,8 @@ import {
   Text,
   TextInput,
 } from "@mantine/core";
-import { BsThreeDots } from "react-icons/bs";
+import { FiDownload } from "react-icons/fi";
 import { MdOutlineClear } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
 import { CustomTable } from "../../../../common/components/Table/CustomTable";
 import { Icons } from "../../../../common/icons";
 import { Color } from "../../../../common/theme";
@@ -17,10 +16,8 @@ import { useOpportunitiesParameters } from "../stores";
 import {
   IResearchOutput,
   patentsData,
-  publicationInsightData,
-  researchData,
+  researchData
 } from "../types";
-import { FiDownload } from "react-icons/fi";
 interface Props {
   opportunities?: PaginatedResponse<IResearchOutput>;
   loadingOrders?: boolean;

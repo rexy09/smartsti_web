@@ -9,11 +9,10 @@ import {
   Table,
   Text,
 } from "@mantine/core";
-import { Color } from "../../theme";
-import { Icons } from "../../icons";
-import "./table.module.css";
-import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { Color } from "../../theme";
+import "./table.module.css";
 
 interface TableProps {
   columns: React.ReactNode;

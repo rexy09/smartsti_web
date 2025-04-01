@@ -1,5 +1,5 @@
 import { BarChart } from '@mantine/charts';
-import { Divider, Group, Paper, Space, Text } from "@mantine/core";
+import { Divider, Group, Paper, Text } from "@mantine/core";
 import { PiDotsThreeOutlineThin } from "react-icons/pi";
 export const lineChartData = [
   { date: "Jan", Funding: 50000, Stem: 60000, Research: 70000 },
@@ -23,7 +23,7 @@ export const lineChartData = [
 }));
 
 interface Props { }
-export default function SentimentDistribution(props: Props) {
+export default function SentimentDistribution({}: Props) {
   return (
     <Paper radius={"md"} p={"0px"}>
       <Group justify="space-between" p={"20px"}>

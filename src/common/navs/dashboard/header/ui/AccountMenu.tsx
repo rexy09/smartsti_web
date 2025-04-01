@@ -1,16 +1,13 @@
 import { Avatar, Flex, Group, Menu, Space, Text } from "@mantine/core";
 
 import { useState } from "react";
-import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 import { useNavigate } from "react-router-dom";
-import { IUserResponse } from "../../../../../features/auth/types";
-import { Color } from "../../../../theme";
 type Props = {
   showTitle?: boolean;
 };
 function AccountMenu({ }: Props) {
   const navigate = useNavigate();
-  const authUser = useAuthUser<IUserResponse>();
+  // const authUser = useAuthUser<IUserResponse>();
 
   const [_userMenuOpened, setUserMenuOpened] = useState(false);
 

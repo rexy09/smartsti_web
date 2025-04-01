@@ -8,141 +8,37 @@ import {
   Text,
   UnstyledButton,
 } from "@mantine/core";
-import { notifications } from "@mantine/notifications";
 import { useEffect, useState } from "react";
-import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { Icons } from "../../../../common/icons";
 import { Color } from "../../../../common/theme";
-import { IUserResponse } from "../../../auth/types";
-import { PaginatedResponse } from "../../../services/types";
-import { IOrder } from "../../home/types";
 import KnowledgeHubStatisticCard from "../components/KnowledgeHubStatisticCard";
-import { useBidServices } from "../services";
+import { useKnowledgeHubServices } from "../services";
 import { useOpportunitiesParameters } from "../stores";
 import EducationalResourceTable from "./EducationalResourceTable";
 import FundingOpportunitiesTable from "./FundingOpportunitiesTable";
+import { default as InnovationTable, default as TechnologyInnovationTable } from "./InnovationTable";
 import KnowledgeHubTable from "./KnowledgeHubTable";
-import TechnologyInnovationTable from "./InnovationTable";
-import InnovationTable from "./InnovationTable";
 
 export default function KnowledgeHub() {
-  const { cancelBid, acceptBid, declineBid, getAvailableDrivers } =
-    useBidServices();
-  const { id } = useParams();
-  const authUser = useAuthUser<IUserResponse>();
-  const navigate = useNavigate();
+  const {  } =
+    useKnowledgeHubServices();
+  // const { id } = useParams();
+  // const authUser = useAuthUser<IUserResponse>();
+  // const navigate = useNavigate();
   const parameters = useOpportunitiesParameters();
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [loadingOrder, setLoadingOrder] = useState(false);
-  const [order, setOrder] = useState<IOrder>();
-  const [bids, setBids] = useState<PaginatedResponse<any>>();
-  const [dirivers, setDirivers] = useState<PaginatedResponse<any>>();
+  const [isLoading, _setIsLoading] = useState(false);
+  // const [loadingOrder, setLoadingOrder] = useState(false);
+  // const [order, setOrder] = useState<IOrder>();
+  // const [bids, setBids] = useState<PaginatedResponse<any>>();
+  // const [dirivers, setDirivers] = useState<PaginatedResponse<any>>();
 
-  const cancelBidAction = () => {
-    setIsLoading(true);
-    cancelBid(bids?.results[0].id!)
-      .then((_response) => {
-        setIsLoading(false);
-        close();
-        fetchData();
-        notifications.show({
-          color: "green",
-          title: "Successfuly",
-          message: "Your bid has been cancelled",
-        });
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        // if (
-        //   error.response.data.error &&
-        //   typeof error?.response?.data?.error === "string"
-        // ) {
-        //   notifications.show({
-        //     color: "red",
-        //     title: "Error",
-        //     message: error.response.data.error,
-        //   });
-        // } else {
-        //   notifications.show({
-        //     color: "red",
-        //     title: "Error",
-        //     message: "Something went wrong!",
-        //   });
-        // }
-      });
-  };
 
-  const acceptBidAction = () => {
-    setIsLoading(true);
-    acceptBid(bids?.results[0].id!)
-      .then((_response) => {
-        setIsLoading(false);
-        fetchData();
-        notifications.show({
-          color: "green",
-          title: "Successfuly",
-          message: "Bid has been accepted",
-        });
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        // if (
-        //   error.response.data.error &&
-        //   typeof error?.response?.data?.error === "string"
-        // ) {
-        //   notifications.show({
-        //     color: "red",
-        //     title: "Error",
-        //     message: error.response.data.error,
-        //   });
-        // } else {
-        //   notifications.show({
-        //     color: "red",
-        //     title: "Error",
-        //     message: "Something went wrong!",
-        //   });
-        // }
-      });
-  };
-
-  const declineBidAction = () => {
-    setIsLoading(true);
-    declineBid(bids?.results[0].id!)
-      .then((_response) => {
-        setIsLoading(false);
-        fetchData();
-        notifications.show({
-          color: "green",
-          title: "Successfuly",
-          message: "Bid has been declined",
-        });
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        // if (
-        //   error.response.data.error &&
-        //   typeof error?.response?.data?.error === "string"
-        // ) {
-        //   notifications.show({
-        //     color: "red",
-        //     title: "Error",
-        //     message: error.response.data.error,
-        //   });
-        // } else {
-        //   notifications.show({
-        //     color: "red",
-        //     title: "Error",
-        //     message: "Something went wrong!",
-        //   });
-        // }
-      });
-  };
 
   const fetchData = () => {
-    setLoadingOrder(true);
+    // setLoadingOrder(true);
   };
 
   useEffect(() => {}, []);

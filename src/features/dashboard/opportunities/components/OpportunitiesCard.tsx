@@ -1,8 +1,8 @@
-import { Card, Group, Image, Paper, Space, Text } from "@mantine/core";
-import { Icons } from "../../../../common/icons";
+import { Group, Image, Paper, Space, Text } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
+import { Icons } from "../../../../common/icons";
 interface Props {}
-export default function OpportunitiesCard(props: Props) {
+export default function OpportunitiesCard({}: Props) {
   const navigate = useNavigate();
 
   return (

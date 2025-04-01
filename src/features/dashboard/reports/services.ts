@@ -1,10 +1,10 @@
 import useApiClient from "../../services/ApiClient";
-import { BidFilterParameters } from "./types";
+import { ReportFilterParameters } from "./stores";
 
-export const useBidServices = () => {
+export const useReportServices = () => {
   const { sendRequest } = useApiClient();
 
-  const getBidStatistics = async (p: BidFilterParameters) => {
+  const getBidStatistics = async (p: ReportFilterParameters) => {
     return sendRequest({
       method: "get",
       url: "/stats/bid",
@@ -15,7 +15,10 @@ export const useBidServices = () => {
     });
   };
 
-  const getOperationBidding = async (p: BidFilterParameters, page: number) => {
+  const getOperationBidding = async (
+    p: ReportFilterParameters,
+    page: number
+  ) => {
     return sendRequest({
       method: "get",
       url: "/operation/bidding",
@@ -27,70 +30,9 @@ export const useBidServices = () => {
       },
     });
   };
-  const cancelBid = async (bidId: string) => {
-    const url = `/operation/bidding/${bidId}/`;
-    return sendRequest({
-      method: "patch",
-      url: url,
-      data: {
-        state: "cancelled",
-      },
-    });
-  };
-  const acceptBid = async (bidId: string) => {
-    const url = `/operation/bidding/${bidId}/`;
-    return sendRequest({
-      method: "patch",
-      url: url,
-      data: {
-        state: "accepted",
-      },
-    });
-  };
-  const declineBid = async (bidId: string) => {
-    const url = `/operation/bidding/${bidId}/`;
-    return sendRequest({
-      method: "patch",
-      url: url,
-      data: {
-        state: "declined",
-      },
-    });
-  };
-
-  const assignDriverBid = async (driverId: string, bidId: string) => {
-    const url = `/operation/bidding/${bidId}`;
-
-    return sendRequest({
-      method: "patch",
-      url: url,
-
-      data: {
-        state: "accepted",
-        driver: driverId,
-      },
-    });
-  };
-
-  const getAvailableDrivers = async (page: number) => {
-    const url = `/owner/driver?page=${page}`;
-    return sendRequest({
-      method: "get",
-      url: url,
-      params: {
-        is_active: false,
-        limit: 100,
-      },
-    });
-  };
 
   return {
     getBidStatistics,
     getOperationBidding,
-    cancelBid,
-    acceptBid,
-    declineBid,
-    getAvailableDrivers,
-    assignDriverBid,
   };
 };

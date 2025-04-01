@@ -8,13 +8,12 @@ import {
 } from "@mantine/core";
 import { BsThreeDots } from "react-icons/bs";
 import { MdOutlineClear } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
 import { CustomTable } from "../../../../common/components/Table/CustomTable";
 import { Icons } from "../../../../common/icons";
 import { Color } from "../../../../common/theme";
 import { PaginatedResponse } from "../../../services/types";
 import { useOpportunitiesParameters } from "../stores";
-import {  technologyData } from "../types";
+import { technologyData } from "../types";
 interface Props {
   data?: PaginatedResponse<any>;
   loadingOrders?: boolean;
@@ -24,7 +23,7 @@ interface Props {
 export default function TechnologyInnovationTable({ fetchOrders }: Props) {
   const parameters = useOpportunitiesParameters();
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const rows = technologyData?.map((row, index) => (
     <Table.Tr key={index}>

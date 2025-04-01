@@ -7,7 +7,7 @@ import {
   Text,
   TextInput,
 } from "@mantine/core";
-import { BsThreeDots } from "react-icons/bs";
+import { IoMdEye } from "react-icons/io";
 import { MdOutlineClear } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { CustomTable } from "../../../../common/components/Table/CustomTable";
@@ -16,7 +16,6 @@ import { Color } from "../../../../common/theme";
 import { PaginatedResponse } from "../../../services/types";
 import { useOpportunitiesParameters } from "../stores";
 import { agreements } from "../types";
-import { IoMdEye } from "react-icons/io";
 interface Props {
   data?: PaginatedResponse<any>;
   loadingOrders?: boolean;

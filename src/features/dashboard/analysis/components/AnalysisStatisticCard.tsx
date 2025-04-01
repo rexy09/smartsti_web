@@ -1,4 +1,4 @@
-import { Button, Flex, Group, Paper, Space, Stack, Text } from "@mantine/core";
+import { Group, Paper, Space, Text } from "@mantine/core";
 import { Icons } from "../../../../common/icons";
 
 interface Props {

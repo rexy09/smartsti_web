@@ -8,7 +8,6 @@ import {
 } from "@mantine/core";
 import { BsThreeDots } from "react-icons/bs";
 import { MdOutlineClear } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
 import { CustomTable } from "../../../../common/components/Table/CustomTable";
 import { Icons } from "../../../../common/icons";
 import { Color } from "../../../../common/theme";
@@ -24,7 +23,7 @@ interface Props {
 export default function ReportTable({ fetchOrders }: Props) {
   const parameters = useOpportunitiesParameters();
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
  
   const rows = reports?.map((row, index) => (
     <Table.Tr key={index}>

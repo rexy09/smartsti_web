@@ -8,27 +8,24 @@ import {
   Text,
 } from "@mantine/core";
 import { useEffect, useState } from "react";
-import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { Icons } from "../../../../common/icons";
 import { Color } from "../../../../common/theme";
-import { IUserResponse } from "../../../auth/types";
 import AnalysisStatisticCard from "../components/AnalysisStatisticCard";
 import { useAnalysisParameters } from "../stores";
+import Mentions from "./Mentions";
 import SentimentDistribution from "./SentimentDistribution";
 import SentimentDonutChart from "./SentimentDonutChart";
 import SourcesDistributionChart from "./SourcesDistributionChart";
-import Mentions from "./Mentions";
 export default function Analysis() {
-  const { id } = useParams();
-  const authUser = useAuthUser<IUserResponse>();
-  const navigate = useNavigate();
+  // const { id } = useParams();
+  // const authUser = useAuthUser<IUserResponse>();
+  // const navigate = useNavigate();
   const parameters = useAnalysisParameters();
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, _setIsLoading] = useState(false);
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  // const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {}, []);
 

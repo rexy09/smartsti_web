@@ -1,18 +1,10 @@
-import { RadialBarChart } from '@mantine/charts';
-import { Badge, Button, Divider, Grid, Group, Menu, Paper, Space, Stack, Text } from "@mantine/core";
-import { useAnalysisParameters } from "../stores";
-import { Icons } from '../../../../common/icons';
-import { Color } from '../../../../common/theme';
+import { Button, Divider, Group, Menu, Paper, Space, Stack, Text } from "@mantine/core";
 import { RiArrowDropDownLine } from 'react-icons/ri';
-const chartData = [
-  { name: 'Academic Journals', value: 65.88, color: '#1463FF' },
-  { name: 'News Sites', value: 20.00, color: '#6EBDE8' },
-  { name: 'Social Media', value: 14.12, color: '#96D544' },
-  { name: 'Government Sites', value: 8.22, color: '#3CCDFB' },
-];
+import { Color } from '../../../../common/theme';
+import { useAnalysisParameters } from "../stores";
 
 interface Props { }
-export default function Mentions(props: Props) {
+export default function Mentions({}: Props) {
   const parameters = useAnalysisParameters();
 
   return (
